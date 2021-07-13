@@ -1,0 +1,89 @@
+#container header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 10.8rem;
+    background: var(--color-white);
+
+}
+
+#container header nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5;
+}
+
+#container header nav ul{
+    list-style: none;
+    position: relative;
+    width: 85rem;
+}
+
+#container header nav ul li{
+    float: left;
+}
+
+#container header nav a{
+    font-family: Raleway, 'Sans Serif';
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#container header img{
+    margin-left: 3rem;
+    align-self: center;
+}
+#container header label{
+    color: #222;
+    font-family: Arial;
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+    height: 50px;
+}
+   
+#container header #bt_menu {
+   display: none;
+}
+   
+#container header label{
+    display: none;
+    justify-self: end;
+    align-self: center;
+}
+
+@media(max-width: 1080px){
+    #container header label{
+        display: block;
+        margin-top: 2rem;
+        margin-right: 1rem;
+    }
+
+    #container header #bt_menu:checked ~ nav{
+       margin-left: 0;
+    }
+    #container header img{
+        margin-top: 1rem;
+    }
+
+    #container header nav{
+        margin-left: -300%;
+        transition: all .4s;
+        justify-self: start;
+    }
+    #container header nav ul{
+        background: #fff;
+        margin-top: 1rem;
+        width: 20rem;
+    }
+
+
+}
+
+
+
+

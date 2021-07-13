@@ -1,0 +1,107 @@
+#container footer{
+  background: var(--color-black);
+  color: var(--color-white);
+  margin-top: 5.4rem;
+}
+
+#container footer .main-footer{
+  display: flex;
+  justify-content: space-between;
+  margin-right: 5.4rem;
+  margin-left: 5.4rem;
+  border-bottom: var(--color-white) 2px solid;
+}
+
+#container footer .main-footer img{
+  align-self: flex-start;
+  margin-top: 2.5rem;
+}
+#container footer .main-footer .content-footer{
+  display: flex;
+  gap: 10.8rem;
+  margin-top: 2.5rem;
+  margin-right: 5.4rem;
+  margin-bottom: 5.4rem;
+
+}
+
+#container footer .main-footer .content-footer ul{
+  list-style: none;
+  line-height: 2;
+}
+
+#container footer .main-footer .content-footer ul li{
+  font-size: 1.2rem;
+}
+
+#container footer .main-footer .content-footer ul li a{
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+#container footer .social{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2.5rem;
+  gap: 16.9rem;
+}
+
+#container footer .social a img{
+  width: 6rem;
+}
+
+#container footer .copyright{
+  width: 100%;
+  background: var(--color-silver);
+  color: var(--color-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+#container footer .copyright spam{
+  margin-top: 3rem;
+}
+
+#container footer .copyright spam p{
+  font-size: 1.6rem;
+  text-align: center;
+  line-height: 2.5;
+  font-style: italic;
+  font-weight: 900;
+}
+
+@media(max-width: 1080px){
+
+  #container footer .main-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #container footer .main-footer .content-footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5.4rem;
+    margin-top: 2.5rem;
+    margin-right: 0;
+    text-align: center;
+  }
+  #container footer .main-footer img{
+    width: 10rem;
+  
+  }
+  #container footer .social{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.5rem;
+    gap: 20%;
+  }
+  
+
+}
