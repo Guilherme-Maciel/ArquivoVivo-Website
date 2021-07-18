@@ -1,0 +1,120 @@
+#container main .modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-family: Raleway, sans-serif;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#container main .modal:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+#container main .modal > .cadaster-div{
+    width: 46.4rem;
+    position: relative;
+    padding: 15px 20px;
+    background: var(--color-silver);
+    border-radius: 2rem;
+    opacity: 0.9;
+}
+#container main .modal > .cadaster-div p,
+#container main .modal > .login-div p{
+    text-align: center;
+}
+#container main .modal > .cadaster-div form div,
+#container main .modal > .login-div form div{
+    display: flex;
+    flex-direction: column;
+}
+#container main .modal > .cadaster-div form div + div{
+    margin-top: 1.5rem;
+}
+#container main .modal > .cadaster-div form div label{
+    font-size: 2.0rem;
+    margin-bottom: 0.5rem;
+}
+#container main .modal > .cadaster-div form div input,
+#container main .modal > .login-div form div input{
+    font-size: 2rem;
+}
+#container main .modal > .cadaster-div form p button{
+    width: 30rem;
+    height: 5rem;
+    border: none;
+    border-radius: 1.5rem;
+    opacity: 0.89;
+    font-size: 2.0rem;
+    font-family: Raleway, 'Sans Serif';
+    background: var(--color-black);
+    color: white;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+#container main .modal > .cadaster-div form p a{
+    font-size: 1.5rem;
+}
+#container main .modal > .login-div{
+    width: 46.4rem;
+    position: relative;
+    padding: 15px 20px;
+    background: var(--color-black);
+    border-radius: 2rem;
+    opacity: 0.9;
+}
+#container main .modal > .login-div form div + div{
+    margin-top: 3rem;
+}
+#container main .modal > .login-div form div label{
+    font-size: 2.0rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-white);
+}
+#container main .modal > .login-div form p button{
+    width: 30rem;
+    height: 5rem;
+    border: none;
+    border-radius: 1.5rem;
+    opacity: 0.89;
+    font-size: 2.0rem;
+    font-family: Raleway, 'Sans Serif';
+    background: #FF4242;
+    color: white;
+    margin-top: 5rem;
+    margin-bottom: 0.5rem;
+}
+#container main .modal > .login-div form span{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5rem;
+}
+#container main .modal > .login-div form span a{
+    font-size: 1.5rem;
+}
+#container main .modal > .login-div form span .forget{
+    color: white;
+}
+#container main .modal > .login-div form span .cadaster{
+    color: #FF4242;
+}
+
+#container main .modal .fechar{
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    text-align: center;
+    font-size: 3.4rem;
+    color: red;
+    font-weight: 600;
+    text-decoration: none;
+}

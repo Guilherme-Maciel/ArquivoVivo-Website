@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/home.css">
     <link rel="stylesheet" type="text/css" href="public/css/header.css">
     <link rel="stylesheet" type="text/css" href="public/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="public/css/modal.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -30,7 +31,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="url"><img src="public/images/movel-icon.svg">
+                        <a href="app/View/furnitures.html"><img src="public/images/movel-icon.svg">
                             <spam>Moveis</spam>
                         </a>
                     </li>
@@ -71,9 +72,62 @@
                     <strong>ESTILO</strong>
                 </p>
                 <div class="group-buttons">
-                    <button class="btn-cadaster">cadastrar</button>
-                    <button class="btn-login">login</button>
+                    <button class="btn-cadaster" onclick="window.location.href = '#cadasterModal'">cadastrar</button>
+                    <button class="btn-login" onclick="window.location.href = '#loginModal'">login</button>
                     <button class="btn-portfolio">portfólio</button>
+                </div>
+            </div>
+            <div id="cadasterModal" class="modal">
+                <div class="cadaster-div">
+                    <a href="#fechar" title="Fechar" class="fechar">x</a>
+                    <p><img src="/public/images/cadaster-logo.svg" alt="Arquivo Vivo"></p>
+                    <form action="">
+                        <div>
+                            <label for="name">nome:</label>
+                            <input type="text" name="name">
+                        </div>
+                        <div>
+                            <label for="lastName">sobrenome:</label>
+                            <input type="text" name="lastName">
+                        </div>
+                        <div>
+                            <label for="email">email:</label>
+                            <input type="text" name="email">
+                        </div>
+                        <div>
+                            <label for="password">senha:</label>
+                            <input type="text" name="password">
+                        </div>
+                        <div>
+                            <label for="confirmPassword">confirmar senha:</label>
+                            <input type="text" name="confirmPassword">
+                        </div>
+                        <p><button type="submit">CADASTRAR</button></p>
+                        <p><a href="#">Já possuo cadastro</a></p>
+                    </form>
+                    
+                </div>
+            </div>
+            <div id="loginModal" class="modal">
+                <div class="login-div">
+                    <a href="#fechar" title="Fechar" class="fechar">x</a>
+                    <p><img src="/public/images/login-logo.svg" alt="Arquivo Vivo"></p>
+                    <form action="">
+                        <div>
+                            <label for="email">email:</label>
+                            <input type="text" name="email">
+                        </div>
+                        <div>
+                            <label for="password">senha:</label>
+                            <input type="text" name="password">
+                        </div>
+                        <p><button type="submit">LOGAR</button></p>
+                        <span>
+                            <a href="#" class="forget">Esqueceu sua senha?</a>
+                            <a href="#" class="cadaster">Não possui cadastro?</a>
+                        </span>
+                    </form>
+
                 </div>
             </div>
         </main>
@@ -81,19 +135,28 @@
             <div class="aboutUs">
                 <h1>QUEM SOMOS?</h1><br>
                 <hr><br>
-                <p>Quantas vidas tem um sofá? Quantas vidas tem a cadeira de uma sala de jantar ou a mesa de um
-                    escritório?
-                    Assim nasceu a Arquivovivo: para dar mais vida às coisas da nossa vida.</p><br>
-                <p>Hoje criamos empregos, geramos negócios e respeitamos os recursos naturais do planeta em todas os
-                    processo.
-                    Ou seja, cumprimos todas as exigências que uma empresa 100% sustentável tem que cumprir. E vamos
-                    além:
-                    resgatamos a cultura, a arte, o design e de alguma maneira, a história em cada um dos seus produtos.
-                </p><br>
-                <p>Portanto, todo cliente que compõe seus ambientes com Arquivovivo dá sua contribuição ao planeta,
-                    através de uma atitude sustentável e sua contribuição cultural, mantendo viva a cultura universal
-                    através do design e da arte de seus criadores.</p><br>
-                <p style="text-align: center;"><img src="public/images/eric.svg" alt="Eric" width="200px"></p>
+                <div class="flex-about">
+                    <div class="paragraph">
+                        <p>Quantas vidas tem um sofá? Quantas vidas tem a cadeira de uma sala de jantar ou a mesa de um
+                            escritório?
+                            Assim nasceu a Arquivovivo: para dar mais vida às coisas da nossa vida.</p><br>
+                        <p>Hoje criamos empregos, geramos negócios e respeitamos os recursos naturais do planeta em
+                            todas os
+                            processo.
+                            Ou seja, cumprimos todas as exigências que uma empresa 100% sustentável tem que cumprir. E
+                            vamos
+                            além:
+                            resgatamos a cultura, a arte, o design e de alguma maneira, a história em cada um dos seus
+                            produtos.
+                        </p><br>
+                        <p>Portanto, todo cliente que compõe seus ambientes com Arquivovivo dá sua contribuição ao
+                            planeta,
+                            através de uma atitude sustentável e sua contribuição cultural, mantendo viva a cultura
+                            universal
+                            através do design e da arte de seus criadores.</p><br>
+                    </div>
+                    <p style="text-align: center;"><img src="public/images/eric.svg" alt="Eric" width="200px"></p>
+                </div>
             </div>
             <div class="sample">
                 <h1>AMOSTRA</h1><br>
@@ -130,14 +193,21 @@
             <div class="location">
                 <h1>LOCALIZAÇÃO e CONTATO</h1><br>
                 <hr><br>
-                <div class="map"></div>
-                <h1>Endereço:</h1>
-                <p>Rua Lira, 159. Vila Madalena, São Paulo - SP.</p>
-                <h1>Contato:</h1>
-                <p>Telefone: +55 (11) 3034-1279</p>
-                <p>WhatsApp: +55 (11) 95607-3034</p>
-                <p>Email: <a href="mailto:vendas@arquivovivomoveis.com.br">vendas@arquivovivomoveis.com.br</a></p>
-                <h3></h3>
+                <div class="flex-location">
+                    <div class="map"></div>
+                    <div class="address-contact">
+                        <div>
+                            <h1>Endereço:</h1>
+                            <p>Rua Lira, 159. Vila Madalena, São Paulo - SP.</p>
+                            <h1 class="contact-h1">Contato:</h1>
+                            <p>Telefone: +55 (11) 3034-1279</p>
+                            <p>WhatsApp: +55 (11) 95607-3034</p>
+                            <p>Email: <a href="mailto:vendas@arquivovivomoveis.com.br"
+                                    style="text-decoration: none;">vendas@arquivovivomoveis.com.br</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="social">
                 <h1>MÍDIAS SOCIAIS</h1><br>
@@ -161,13 +231,13 @@
                 <img src="public/images/logo-white.svg" alt="logo">
                 <div class="content-footer">
                     <ul>
-                    <h2>ATENDIMENTO</h2>
+                        <h2>ATENDIMENTO</h2>
                         <li> Segunda à Sexta - 10h às 20h</li>
                         <li> Sàbado: apenas agendamento.</li>
                     </ul>
 
                     <ul>
-                    <h2>ENDEREÇO|CONTATO</h2>
+                        <h2>ENDEREÇO|CONTATO</h2>
                         <li>Rua Lira, 159 - Vila Madalena, São Paulo - SP</li>
                         <li>Telefone: +55 (11) 3034-1279</li>
                         <li>Whatsapp: +55 (11) 95607-3034</li>
@@ -175,7 +245,7 @@
                     </ul>
 
                     <ul>
-                    <h2>PÁGINAS</h2>
+                        <h2>PÁGINAS</h2>
                         <li><a href="#">Contato</a></li>
                         <li><a href="#">Moveís</a></li>
                         <li><a href="#">Designers</a></li>

@@ -1,0 +1,114 @@
+:root {
+    font-size: 62.5%;
+    --color-black: #000000;
+    --color-gray-one: #171717;
+    --color-gray-two: #2F2E2E;
+    --color-gray: #8B8B8B;
+    --color-silver: #EAEAEA;
+    --color-white: #FFFFFF;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Raleway, 'Sans Serif';
+}
+
+body{
+    background: var(--color-silver);
+}
+
+#container h1{
+    margin: 2rem 0 1.5rem 1.5rem;
+    color:#2f2e2e;
+    font-size:24px;
+    font-family: Raleway, 'Sans Serif';
+}
+
+#container hr{
+    background-color: black;
+    margin: 0 1.5rem;
+
+}
+#container .search-container{
+    background: white;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    border: black 1px solid;
+    margin-top: 1.5rem;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+    
+}
+
+#container .search-container img{
+    width: 42px;
+}
+#container .search-container input{
+    height: 32px;
+    width: 80%;
+    border: none;
+    font-size: 18px;
+    font-family: Raleway, "Sans Serif";
+}
+#container .search-container input:focus{
+    outline: 0;
+}
+#container .filter-container{
+    margin-top: 1.5rem;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+    text-align: center;
+}
+
+#container .filter-container a{
+    line-height: 2;
+    text-decoration: none;
+    color: #171717;
+    font-family: Raleway, 'Sans Serif';
+    font-size: 1.5rem;
+}
+
+#container section .furnitures-container{
+   display: flex;
+   justify-content: center;
+  
+}
+#container section .furnitures-container div{
+    width: auto;
+    text-align: center;
+}
+#container section .furnitures-container fieldset{
+    display: inline-block;
+    border: none;
+    margin-left: 1rem;
+    margin-top: 1rem;
+
+}
+
+#container .furnitures-container .sample-furniture{
+    width: 130px;
+    background: white;
+    border-radius: 20px;
+}
+
+
+#container section .furnitures-container .sample-furniture div{
+    height: 100px;
+    border-radius: 20px;
+    background-size: cover;
+
+}
+#container section .furnitures-container .sample-furniture h3{
+    font-family: Raleway, 'Sans Serif';
+    text-align: center;
+    color: #FF4242;
+    margin-top: 15px;
+    font-size: 1.2rem;
+}
+#container section .furnitures-container .sample-furniture p{
+    text-align: center;
+    font-family: Raleway, 'Sans Serif';
+    font-size: 12px;
+    margin-top: 4px;
+}

@@ -1,4 +1,4 @@
-:root{
+:root {
     font-size: 62.5%;
     --color-black: #000000;
     --color-gray-one: #171717;
@@ -6,30 +6,29 @@
     --color-gray: #8B8B8B;
     --color-silver: #EAEAEA;
     --color-white: #FFFFFF;
-    
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: Raleway, 'Sans Serif';
 }
 
-body{
+body {
     background: var(--color-silver);
 }
 
-#container main .img-carousel h1{
+#container main .img-carousel h1 {
     text-align: center;
     font-size: 4rem;
     font-family: Raleway;
-    font: 800 'Raleway' normal;
+    font: 800 'Raleway'normal;
     color: var(--color-white);
     padding-top: 1.5rem;
-    
+
 }
 
-#container main .img-carousel p{
+#container main .img-carousel p {
     text-align: center;
     font-size: 2rem;
     margin-top: 4rem;
@@ -44,13 +43,13 @@ body{
 
 }
 
-#container main .img-carousel{
+#container main .img-carousel {
     width: 100%;
     height: 40rem;
 
 }
 
-#container main .img-carousel .group-buttons{
+#container main .img-carousel .group-buttons {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,9 +59,9 @@ body{
 
 }
 
-#container main .img-carousel .group-buttons .btn-cadaster, 
-#container main .img-carousel .group-buttons .btn-login, 
-#container main .img-carousel .group-buttons .btn-portfolio{
+#container main .img-carousel .group-buttons .btn-cadaster,
+#container main .img-carousel .group-buttons .btn-login,
+#container main .img-carousel .group-buttons .btn-portfolio {
     width: 15rem;
     height: 5rem;
     border: none;
@@ -72,36 +71,37 @@ body{
     font-family: Raleway, 'Sans Serif';
 }
 
-#container main .img-carousel .group-buttons .btn-cadaster{
+#container main .img-carousel .group-buttons .btn-cadaster {
     background: var(--color-white);
     margin-right: 2.5rem;
 
 }
 
-#container main .img-carousel .group-buttons .btn-login{
+#container main .img-carousel .group-buttons .btn-login {
     background: var(--color-black);
     color: white;
     margin-right: 2.5rem;
 
 }
 
-#container main .img-carousel .group-buttons .btn-portfolio{
+#container main .img-carousel .group-buttons .btn-portfolio {
     background: var(--color-gray-one);
     color: #D6D6D6;
 
 }
+
 #container section .aboutUs,
 #container section .sample,
 #container section .location,
-#container section .social{
+#container section .social {
     margin: 0 1.5rem;
 
 }
 
-#container section .aboutUs h1, 
+#container section .aboutUs h1,
 #container section .sample h1,
 #container section .location h1,
-#container section .social h1{
+#container section .social h1 {
     margin-top: 2rem;
     color: var(--color-gray-two);
     font-size: 2.4rem;
@@ -112,12 +112,11 @@ body{
 #container section .aboutUs hr,
 #container section .sample hr,
 #container section .location hr,
-#container section .social hr
-{
+#container section .social hr {
     background-color: black;
 }
 
-#container section .aboutUs p{
+#container section .aboutUs p {
     font-size: 1.5rem;
     font-family: Raleway, 'Sans Serif';
     text-align: justify;
@@ -125,60 +124,64 @@ body{
     font-weight: 600;
     line-height: 2.5rem;
 }
-#container section .sample .container-furnitures{
+
+#container section .sample .container-furnitures {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
 }
 
-#container section .sample .container-furnitures + .container-furnitures{
+#container section .sample .container-furnitures+.container-furnitures {
     margin-top: 1.5rem;
 }
 
-#container section .sample .container-furnitures .sample-furniture{
+#container section .sample .container-furnitures .sample-furniture {
     width: 16.65rem;
     height: 16.5rem;
     background: var(--color-white);
     border-radius: 2rem;
 }
 
-#container section .sample .container-furnitures .sample-furniture div{
+#container section .sample .container-furnitures .sample-furniture div {
     width: 100%;
     height: 75%;
     border-radius: 2rem;
     background-size: cover;
 }
-#container section .sample .container-furnitures .sample-furniture h3{
+
+#container section .sample .container-furnitures .sample-furniture h3 {
     font: normal Raleway, 'Sans Serif';
     text-align: center;
     color: #FF4242;
     margin-top: 1.5rem;
 }
 
-#container section .location .map{
+#container section .location .map {
     height: 26.85rem;
     border: 0.2rem black solid;
     border-radius: 2rem;
 }
 
-#container section .location p{
+#container section .location p {
     font: normal 1.5rem/2.8rem Raleway, 'Sans Serif'
 }
-#container section .social #social-container{
+
+#container section .social #social-container {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20%;
     margin-top: 2rem;
 }
+
 #container section .social #social-container .facebook h2,
-#container section .social #social-container .instagram h2{
+#container section .social #social-container .instagram h2 {
     margin-top: 1rem;
 }
 
 #container section .social #social-container .facebook,
-#container section .social #social-container .instagram{
+#container section .social #social-container .instagram {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -186,18 +189,19 @@ body{
 }
 
 #container section .social #social-container .instagram img,
-#container section .social #social-container .facebook img{
+#container section .social #social-container .facebook img {
     width: 10rem;
 }
 
-@media(min-width: 1080px){
-    #container main .img-carousel{
+@media(min-width: 1080px) {
+    #container main .img-carousel {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         height: 85vh;
     }
-    #container main .img-carousel .group-buttons{
+
+    #container main .img-carousel .group-buttons {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-areas: "a b c d";
@@ -205,46 +209,49 @@ body{
         margin-bottom: 2.5rem;
         margin-left: 3.5rem;
     }
-    #container main .img-carousel .group-buttons .btn-cadaster, 
-    #container main .img-carousel .group-buttons .btn-login, 
-    #container main .img-carousel .group-buttons .btn-portfolio{
-    width: 30rem;
-    height: 10rem;
-    border: none;
-    border-radius: 3rem;
-    opacity: 0.89;
-    font-size: 4.3rem;
-    font-family: Raleway, 'Sans Serif';
-    font-weight: 300;
-}
 
-    #container main .img-carousel .group-buttons .btn-cadaster{
+    #container main .img-carousel .group-buttons .btn-cadaster,
+    #container main .img-carousel .group-buttons .btn-login,
+    #container main .img-carousel .group-buttons .btn-portfolio {
+        width: 30rem;
+        height: 10rem;
+        border: none;
+        border-radius: 3rem;
+        opacity: 0.89;
+        font-size: 4.3rem;
+        font-family: Raleway, 'Sans Serif';
+        font-weight: 300;
+    }
+
+    #container main .img-carousel .group-buttons .btn-cadaster {
         background: var(--color-white);
         margin-right: 2.5rem;
-    
+
     }
-    
-    #container main .img-carousel .group-buttons .btn-login{
+
+    #container main .img-carousel .group-buttons .btn-login {
         background: var(--color-black);
         color: white;
         margin-right: 2.5rem;
         margin-left: 4rem;
-    
+
     }
-    
-    #container main .img-carousel .group-buttons .btn-portfolio{
+
+    #container main .img-carousel .group-buttons .btn-portfolio {
         background: var(--color-gray-one);
         color: #D6D6D6;
         grid-area: d;
-    
+
     }
-    #container main .img-carousel h1{
-        text-align:left;
+
+    #container main .img-carousel h1 {
+        text-align: left;
         font-size: 6.4rem;
         margin-top: 4rem;
         margin-left: 3.5rem;
     }
-    #container main .img-carousel p{
+
+    #container main .img-carousel p {
         width: 70rem;
         text-align: left;
         font-size: 3.6rem;
@@ -256,9 +263,92 @@ body{
         margin-left: 3.5rem;
     }
 
+    #container section .aboutUs h1,
+    #container section .sample h1,
+    #container section .location h1,
+    #container section .social h1 {
+        font-size: 3.6rem;
+        margin-top: 5rem;
+    }
+
+    #container section .aboutUs,
+    #container section .sample,
+    #container section .location,
+    #container section .social {
+        margin: 0 5rem;
+    }
+
+    #container section .aboutUs .flex-about {
+        display: flex;
+        align-items: center;
+        margin-top: 2.5rem;
+    }
+
+    #container section .aboutUs .flex-about p img {
+        width: 30rem;
+    }
+
+    #container section .aboutUs .flex-about .paragraph p {
+        width: 85%;
+        font-size: 2.0rem;
+        font-weight: 400;
+        line-height: 2;
+        text-align: left;
+    }
+
+    #container section .sample .container-furnitures {
+        margin-top: 2.5rem;
+
+    }
+
+    #container section .sample .container-furnitures .sample-furniture {
+        width: 28rem;
+        height: 26rem;
+        background: var(--color-white);
+        border-radius: 2rem;
+    }
+
+    #container section .sample .container-furnitures .sample-furniture h3 {
+        font-size: 2.4rem;
+    }
+
+    #container section .location .flex-location {
+        display: flex;
+        justify-content: center;
+        margin-top: 2.5rem;
+
+    }
+
+    #container section .location .flex-location .address-contact div p {
+        font: normal 2rem/3 Raleway, 'Sans Serif'
+    }
+
+    #container section .location .flex-location .address-contact div .contact-h1 {
+        margin-top: 8rem;
+
+    }
+
+    #container section .location .flex-location .map {
+        width: 70rem;
+        height: 50rem;
+        margin-right: 3rem;
+    }
+
+    #container section .location .flex-location .address-contact {
+        display: flex;
+        align-items: center;
+
+    }
+
+    #container section .social #social-container .instagram img,
+    #container section .social #social-container .facebook img {
+        width: 25rem;
+    }
+
+    #container section .social #social-container .facebook h2,
+    #container section .social #social-container .instagram h2 {
+        font-size: 300%;
+
+    }
+
 }
-
-
-
-
-
