@@ -1,0 +1,92 @@
+:root {
+    font-size: 62.5%;
+    --color-black: #000000;
+    --color-gray-one: #171717;
+    --color-gray-two: #2F2E2E;
+    --color-gray: #8B8B8B;
+    --color-silver: #EAEAEA;
+    --color-white: #FFFFFF;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Raleway, 'sans-serif';
+}
+body{
+    background: var(--color-silver);
+}
+
+#container h1{
+    margin: 2rem 0 1.5rem 1.5rem;
+    color:#2f2e2e;
+    font-size:24px;
+    font-family: Raleway, 'Sans Serif';
+}
+
+#container hr{
+    background-color: black;
+    margin: 0 1.5rem;
+
+}
+#container .search-container{
+    background: white;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    border: black 1px solid;
+    margin-top: 1.5rem;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+}
+
+#container .search-container img{
+    width: 42px;
+}
+#container .search-container input{
+    height: 32px;
+    width: 80%;
+    border: none;
+    font-size: 18px;
+    font-family: Raleway, "Sans Serif";
+}
+#container .search-container input:focus{
+    outline: 0;
+}
+#container section{
+    margin-top: 1rem;
+}
+#container section .designer{
+    margin: 1rem 1.5rem 1.5rem;
+    background: var(--color-white);
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+#container section .designer img{
+    height: 20rem;
+}
+#container section .designer .information-designer .title{
+    text-align: center;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+#container section .designer .information-designer .description{
+    text-align: center;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+
+}
+#container section .designer .information-designer a{
+    font-size: 1.8rem;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #07A592;
+    font-weight: 700;
+    margin-top: 1rem;
+}
+@media (min-width: 1080px){
+    
+}

@@ -241,7 +241,6 @@ body {
         background: var(--color-gray-one);
         color: #D6D6D6;
         grid-area: d;
-
     }
 
     #container main .img-carousel h1 {
@@ -348,7 +347,5 @@ body {
     #container section .social #social-container .facebook h2,
     #container section .social #social-container .instagram h2 {
         font-size: 300%;
-
     }
-
 }
