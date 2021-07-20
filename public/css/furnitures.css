@@ -112,3 +112,72 @@ body{
     font-size: 12px;
     margin-top: 4px;
 }
+
+#container .selection-furnitures  nav{
+ display: flex;
+ justify-content: center;
+}
+#container .selection-furnitures  li{
+    list-style: none;
+    text-align: center;
+    margin-top: 30px;
+    display:center;
+}
+
+#container .selection-furnitures  li  div{
+
+    background-color:var(--color-white);
+    border-radius:50%;
+    height:3.0rem;
+    width:3.0rem;
+    display:flex;
+    justify-content: center;
+    align-items: center ;
+    margin-right:1.5rem;
+    
+}
+
+#container .selection-furnitures  li  a{
+    text-decoration: none;
+    color:var(--color-black);
+    font-size: 2.0rem;
+    font-family: Raleway, "Sans Serif";
+    margin: 1.5rem;
+    font-weight: bolder;
+}
+
+
+
+
+@media (min-width:1080px ){
+    #container .furnitures-container .sample-furniture{
+
+        width: 240px;
+        height: 285px;
+        background: white;
+        border-radius: 20px;
+        margin-right: 2.0rem;
+    }
+    
+    
+    #container section .furnitures-container .sample-furniture div{
+        height: 17.0rem;
+        border-radius: 2.0rem;
+        background-size: cover;
+    
+    }
+    #container section .furnitures-container .sample-furniture h3{
+        font-family: Raleway, 'Sans Serif';
+        text-align: center;
+        color: #FF4242;
+        margin-top: 1.5rem;
+        font-size: 1.8rem;
+    }
+    #container section .furnitures-container .sample-furniture p{
+        text-align: center;
+        font-family: Raleway, 'Sans Serif';
+        font-size: 1.8rem;
+        margin-top: 0.4rem;
+    }
+}
+
