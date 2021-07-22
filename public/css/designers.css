@@ -17,7 +17,7 @@ body{
 }
 
 #container h1{
-    margin: 2rem 0 1.5rem 1.5rem;
+    margin: 2rem 5rem 1.5rem 5rem;
     color:#2f2e2e;
     font-size:24px;
     font-family: Raleway, 'Sans Serif';
@@ -25,7 +25,7 @@ body{
 
 #container hr{
     background-color: black;
-    margin: 0 1.5rem;
+    margin: 0 5rem;
 
 }
 #container .search-container{
@@ -35,8 +35,9 @@ body{
     align-items: center;
     border: black 1px solid;
     margin-top: 1.5rem;
-    margin-right: 1.5rem;
-    margin-left: 1.5rem;
+    margin-right: 5rem;
+    margin-left: 5rem;
+    margin-bottom: 2rem;
 }
 
 #container .search-container img{
@@ -56,7 +57,7 @@ body{
     margin-top: 1rem;
 }
 #container section .designer{
-    margin: 1rem 1.5rem 1.5rem;
+    margin: 3rem 5rem 5rem;
     background: var(--color-white);
     border-radius: 2rem;
     display: flex;
@@ -76,6 +77,7 @@ body{
     text-align: center;
     font-size: 1.3rem;
     margin-top: 1rem;
+    line-height: 1.5;
 
 }
 #container section .designer .information-designer a{
@@ -87,6 +89,68 @@ body{
     font-weight: 700;
     margin-top: 1rem;
 }
+#container section .selection-furnitures  nav{
+    display: flex;
+    justify-content: center;
+   }
+   #container section .selection-furnitures  li{
+       list-style: none;
+       text-align: center;
+       margin-top: 30px;
+       display:center;
+   }
+   
+   #container section .selection-furnitures  li  div{
+   
+       background-color:var(--color-white);
+       border-radius:50%;
+       height:3.0rem;
+       width:3.0rem;
+       display:flex;
+       justify-content: center;
+       align-items: center ;
+       margin-right:1.5rem;
+       
+   }
+   
+   #container section .selection-furnitures  li  a{
+       text-decoration: none;
+       color:var(--color-black);
+       font-size: 2.0rem;
+       font-family: Raleway, "Sans Serif";
+       margin: 1.5rem;
+       font-weight: bolder;
+   }
+   
 @media (min-width: 1080px){
+    #container section .designer{
+        display: flex;
+        flex-direction: row;
+    }
+    #container section .designer img{
+        height: 100%;
+        align-self: center;
+    }
+    #container section .designer .information-designer{
+        margin: 0 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #container section .designer .information-designer .title{
+        font-size: 2.4rem;
+        text-align: left;
+        display: flex;
+        flex-direction: row;
+    }
+    #container section .designer .information-designer .description{
+        font-size: 2.4rem;
+        text-align: justify;
+    }
+    #container section .designer .information-designer a{
+        font-size: 3rem;
+        text-align: right;
+    }
     
 }
