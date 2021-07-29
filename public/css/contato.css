@@ -7,3 +7,11 @@
     --color-silver: #EAEAEA;
     --color-white: #FFFFFF;
 }
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Raleway, 'sans-serif';
+}
+body{
+    background: var(--color-silver);
+}
