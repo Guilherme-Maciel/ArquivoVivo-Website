@@ -8,8 +8,7 @@ body {
    
 }
 
-
-h1{  font-family: arial;
+#container h1{  font-family: arial;
 	margin: 280px;
 	margin-left:30%;
 	margin-top:-270px;
@@ -17,7 +16,7 @@ h1{  font-family: arial;
 	font-weight:20px;
 	font-size:20px;
 }
-h6{ font-family: arial;
+#container h6{ font-family: arial;
 	font-weight: 10px;
 	margin: -120px;
 	margin-left:110px;
@@ -25,7 +24,7 @@ h6{ font-family: arial;
 	margin-left:208px;
 	font-size:15px;}
 
- .disp{
+ #container .disp{
     font-family: arial;
 	font-weight: normal;
 	margin: -120px;
@@ -36,7 +35,7 @@ h6{ font-family: arial;
 	color:rgba(0, 223, 49, 1);
 
 }
-.text2{font-family: arial;
+#container .text2{font-family: arial;
 	font-weight:lighter;
 	margin: -10px;
 	margin-left:0%;
@@ -45,7 +44,7 @@ h6{ font-family: arial;
 	font-size:12px;
 	list-style:none;}
 	
-.text3{font-family: arial;
+#container .text3{font-family: arial;
 	font-weight: lighter;
 	margin: -130px;
 	margin-left:0%;
@@ -53,7 +52,7 @@ h6{ font-family: arial;
 	margin-right:50px;
 	font-size:13px;}
 	
-.text4{font-family: arial;
+#container .text4{font-family: arial;
 	font-weight: lighter;
 	margin: -100px;
 	margin-left:0%;
@@ -61,7 +60,7 @@ h6{ font-family: arial;
 	margin-right:50px;
 	font-size:20px}
 	
-	.disp2{font-family: arial;
+#container	.disp2{font-family: arial;
 	font-weight: normal;
 	margin: -130px;
 	margin-left:192px;
@@ -69,7 +68,7 @@ h6{ font-family: arial;
 	margin-right:20px;
 	font-size:13px;}
 
-	img{
+#container	img{
 
 		width: 330px;
 		height: 250px;
@@ -80,7 +79,7 @@ h6{ font-family: arial;
 		
 		}
  
-		.btn{
+	#container	.btn{
 			background: transparent;
 			border-radius: 40px;
 			border: transparent;
@@ -89,7 +88,7 @@ h6{ font-family: arial;
 		 margin-top: 85px;
 		 margin-left:-22px;}
 		
-		 .btn2{
+	#container	 .btn2{
 			background: transparent;
 			border-radius: 40px;
 			border: transparent;
@@ -100,7 +99,7 @@ h6{ font-family: arial;
 		 }
 		
  
- .btn3{
+#container .btn3{
 	background: transparent;
 	border-radius: 40px;
 	border: transparent;
@@ -114,7 +113,13 @@ h6{ font-family: arial;
 
 
 
-@media screen and (min-width: 768px){}
+@media  (max-width: 768px){
+body{
+	font-size:50% ;
+}
+
+
+}
 
 
 

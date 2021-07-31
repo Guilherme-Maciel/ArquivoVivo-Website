@@ -1,0 +1,90 @@
+body {
+    background-color: rgba(228, 228, 228, 1);
+
+
+	
+   
+}
+#container .title{ 
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 40px; 
+	margin-left:100px;
+	margin-top:200px;
+	margin-right:50px;
+	font-size:35px;
+	font-weight: bold;
+	color:black;
+}
+#container .text1 .tex{  
+	font-family: arial;
+	margin: 40px;
+	margin-left:0px;
+	margin-top:30px;
+	margin-right:90px;
+	font-weight:bold;
+	font-size:25px;
+	color:black;
+}
+#container .text1{
+	font-family: arial;
+	margin: 280px;
+	margin-left:100px;
+	margin-top:80px;
+	margin-right:50px;
+	font-size:20px;
+}
+#container .text2 {  
+	font-family: arial;
+	margin: 280px;
+	margin-left:100px;
+	margin-top:-240px;
+	margin-right:50px;
+	font-size:20px;
+
+}
+
+#container table{
+    font-family: Arial, Helvetica, sans-serif;
+	margin-left:700px;
+	margin-top:-580px;
+	margin-right:50px;
+	font-size:15px;
+	color: red;
+	width: 100px;
+	height: 200px;
+}
+ #container table h3{
+	 color:rgba(7, 165, 146, 1);
+	 font-size:15px ; 
+ }
+
+ #container table h2{
+	 color: black;
+	 font-size:25px; 
+ }
+
+ #container table h1{
+	color: black;
+	font-size:15px;
+	
+}
+#container hr{
+    background-color: black;
+    height: 1px;
+	margin-left: 100px;
+}
+
+#container table{
+	border:black solid 1px;
+}
+
+@media screen and (max-width: 768px){
+	
+	table{
+		border:rgb(61, 50, 50) solid 1px;
+		margin-top:500px;
+		
+	}
+
+
+}
