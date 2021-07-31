@@ -1,0 +1,110 @@
+:root {
+    font-size: 62.5%;
+    --color-black: #000000;
+    --color-gray-one: #171717;
+    --color-gray-two: #2F2E2E;
+    --color-gray: #8B8B8B;
+    --color-silver: #EAEAEA;
+    --color-white: #FFFFFF;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Raleway, 'Sans Serif';
+}
+
+body{
+    background-color: var(--color-silver);
+}
+#container  img {
+    width:100%;
+}
+
+#container  h1 {
+    margin-top: 2.0rem;
+    margin-left: 2.0rem;
+    font-family: Raleway, 'Sans Serif';
+}
+
+#container  hr {
+    height: 5px;
+    margin-bottom: 10px;
+    color:var(--color-black)
+}
+#container .reforma-info h2 {
+    margin-left: 2.0rem;
+    margin-right: 2.0rem;
+    margin-bottom: 2.0rem;
+    margin-top: 1.0rem;
+    color:var(--color-black);
+    font-family: Raleway, 'Sans Serif';
+}
+
+#container .reforma-info p{
+    margin-left: 2.0rem;
+    margin-right: 2.0rem;
+    margin-bottom: 3.0rem;
+    font-size: 1.6rem;
+    color:var(--color-black);
+    font-family: Raleway, 'Sans Serif';
+}
+
+
+#container .contato-reforma {
+    margin:2.0rem;
+    height: 20.5rem;
+    border:var(--color-black) solid 1px;
+    padding-top: 1.0rem;
+
+}
+
+#container .contato-reforma h3{
+    margin-left:1.0rem;   
+    margin-right:2.0rem;
+    margin-bottom: 2.0rem;
+    font-size: 1.6rem;
+    color:var(--color-black);
+}
+
+#container .contato-reforma  a{
+    font-size: 1.3rem;
+    font-style: none;
+    line-height: 1.5;
+    margin-right: 1.0rem;
+
+}
+#container .contato-reforma p{
+    margin-left: 1.0rem;
+    font-size: 1.6rem;
+    color:var(--color-black);
+    font-family: Raleway, 'Sans sefif';
+}
+
+
+
+
+
+@media (min-width:1080px ){
+
+    #container .batata {
+        display:flex;
+    }
+    #container  img {
+        width: 100%;
+    }
+
+
+    #container .contato-reforma {
+        margin-top: 5.0rem;
+        height: 20.0rem;
+        width: 370px;
+        border: black solid 1px;
+        padding-top: 1.0rem;
+    
+    }
+    
+
+
+    
+
+}

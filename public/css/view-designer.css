@@ -1,0 +1,150 @@
+:root {
+    font-size: 62.5%;
+    --color-black: #000000;
+    --color-gray-one: #171717;
+    --color-gray-two: #2F2E2E;
+    --color-gray: #8B8B8B;
+    --color-silver: #EAEAEA;
+    --color-white: #FFFFFF;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Raleway, 'Sans Serif';
+}
+body{
+    background-color: var(--color-silver);
+}
+#container button{
+    margin: 2.0rem;
+    font-family: Raleway, 'Sans Serif';
+}
+#container hr{
+    background-color:var(--color-black);
+    height: 0.1rem;
+}
+
+#container .designer img{
+    width: 25rem;
+    height: 25rem;
+    margin-left: 4rem;
+
+}
+#container .designer h1{
+    text-align: center;
+    margin-top:0.1rem;
+    margin-bottom: 1.0rem;
+    font-family: Raleway, 'Sans Serif';
+
+
+}
+#container .designer p{
+    font-family: Raleway, 'Sans Serif';
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 2.0rem;
+    
+}
+#container .designer h3{
+    text-align: center;  
+    font-size: 1.5rem;
+}
+#container .designer  a{
+    margin-bottom: 3.0rem;
+    text-decoration: none;
+    font-family: Raleway, 'Sans Serif';
+    font-size: 1.5rem;
+    text-align: center;
+    margin-left:8.0rem ;
+}
+
+
+#container .designer{
+    display:flex;
+    flex-direction: column;
+}
+
+#container .projetos{
+    width: 130px;
+    background: white;
+    border-radius: 2.0rem;
+    margin-left: 2.0rem;
+    margin-top: 2.0rem;
+    display: inline-block;
+    border: none;
+    margin-left: 3.0rem;
+    margin-top: 1rem;
+
+}
+
+
+#container .projetos div{
+    height: 100px;
+    border-radius: 2.0rem;
+    background-size: cover;
+    
+}
+#container .projetos h3{
+    font-family: Raleway, 'Sans Serif';
+    text-align: center;
+    color: #FF4242;
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+}
+#container .projetos p{
+    text-align: center;
+    font-family: Raleway, 'Sans Serif';
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+
+@media (min-width:1080px ){
+
+
+#container .designer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#container .designer img{
+    width: 550px;
+    height: 550px;
+}
+
+#container .designer div {
+    text-align: center;
+    justify-content: left;
+}
+
+#container .projetos{
+
+    width: 200px;
+    height: 285px;
+    background: white;
+    border-radius: 20px;
+    margin-right: 2.0rem;
+    margin-left: 4 .0rem;
+}
+
+
+#container .projetos div{
+    height: 17.0rem;
+    border-radius: 2.0rem;
+    background-size: cover;
+
+}
+#container .projetos h3{
+    font-family: Raleway, 'Sans Serif';
+    text-align: center;
+    color: #FF4242;
+    margin-top: 1.5rem;
+    font-size: 1.8rem;
+}
+#container .projetos p{
+    text-align: center;
+    font-family: Raleway, 'Sans Serif';
+    font-size: 1.8rem;
+    margin-top: 0.4rem;
+}
+}

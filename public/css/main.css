@@ -1,40 +1,55 @@
-﻿
+﻿* {
+	margin: 0;
+	padding: 0;
+}
 
 body {
-    background-color: rgba(228, 228, 228, 1);
-	margin-top:70px;
-
-	
-   
+	background-color: rgba(228, 228, 228, 1);
 }
 
+ 
 #container h1{  font-family: arial;
-	margin: 280px;
-	margin-left:30%;
-	margin-top:-270px;
-	margin-right:50px;
-	font-weight:20px;
-	font-size:20px;
 }
+#container h1 {
+	font-family: arial;
+
+	margin: 280px;
+	margin-left: 30%;
+	margin-top: -270px;
+	margin-right: 50px;
+	font-weight: 20px;
+	font-size: 20px;
+}
+
 #container h6{ font-family: arial;
+}
+
+#container h3 {
+	font-family: arial;
 	font-weight: 10px;
 	margin: -120px;
-	margin-left:110px;
-	margin-top:100px;
-	margin-left:208px;
-	font-size:15px;}
+	margin-left: 110px;
+	margin-top: 100px;
+	margin-left: 208px;
+	font-size: 15px;
+}
+
 
  #container .disp{
     font-family: arial;
+ }
+#container .disp {
+	font-family: arial;
 	font-weight: normal;
 	margin: -120px;
-	margin-left:110px;
-	margin-top:2px;
-	margin-right:50px;
-	font-size:10px;
-	color:rgba(0, 223, 49, 1);
+	margin-left: 110px;
+	margin-top: 2px;
+	margin-right: 50px;
+	font-size: 10px;
+	color: rgba(0, 223, 49, 1);
 
 }
+
 #container .text2{font-family: arial;
 	font-weight:lighter;
 	margin: -10px;
@@ -122,13 +137,80 @@ body{
 }
 
 
+#container .text2 {
+	font-family: arial;
+	font-weight: lighter;
+	margin: -10px;
+	margin-left: 0%;
+	margin-top: 50px;
+	margin-right: 50px;
+	font-size: 12px;
+	list-style: none;
+}
+
+#container .text3 {
+	font-family: arial;
+	font-weight: lighter;
+	margin: -130px;
+	margin-left: 0%;
+	margin-top: 50px;
+	margin-right: 50px;
+	font-size: 13px;
+}
+
+#container .text4 {
+	font-family: arial;
+	font-weight: lighter;
+	margin: -100px;
+	margin-left: 0%;
+	margin-top: 150px;
+	margin-right: 50px;
+	font-size: 20px
+}
+
+#container img {
+
+	width: 330px;
+	height: 250px;
+	margin-top: 5x;
+	border-radius: 10px;
+	margin-left: 30px;
+	margin-right: 5px;
+
+}
+
+#container .btn {
+	background: transparent;
+	border-radius: 40px;
+	border: transparent;
+	width: 200px;
+	height: 50px;
+	margin-top: 85px;
+	margin-left: -22px;
+}
+
+#container .btn2 {
+	background: transparent;
+	border-radius: 40px;
+	border: transparent;
+	width: 200px;
+	height: 50px;
+	margin-top: 85px;
+	margin-left: -18px;
+}
+
+#container .btn3 {
+	background: transparent;
+	border-radius: 40px;
+	border: transparent;
+	width: 200px;
+	height: 50px;
+	margin-top: 5px;
+	margin-left: -670px;
+}
 
 
 
 
 
-
-
-
-
-
+@media screen and (min-width: 768px) {}
