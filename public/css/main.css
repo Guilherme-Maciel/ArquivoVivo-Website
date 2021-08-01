@@ -15,12 +15,26 @@
 body{
     background: var(--color-silver);
 }
+#container #back{
+	margin: 2.0rem 0rem 2rem 1.5rem;
+	border: none;
+}
+#container hr:nth-child(3){
+	background-color: black;
+	margin: 0rem 1.5rem 1.5rem 1.5rem;;
+}
+#container hr:nth-child(5){
+	margin: 3rem 1.5rem 3rem 1.5rem;
+
+}
+
 #container .image-furniture{
 	display: grid;
 	grid-template-rows: 1fr;
 	grid-template-areas: 
 	'a'
-	'b';
+	'b'
+	'c';
 	justify-content: center;
 }
 #container .image-furniture p{
@@ -29,6 +43,12 @@ body{
 	grid-area: a;
 	margin-top: 2rem;
 	margin-bottom: 2rem;
+}
+#container .image-furniture .heart{
+	grid-area: c;
+}
+#container .image-furniture .heart img{
+	height: 7rem;
 }
 #container .image-furniture p span{
 	font-weight: 500;
@@ -52,6 +72,7 @@ body{
 #container .furniture-informations p{
 	font-size: 1.8rem;
 	margin-left: 1.5rem;
+	line-height: 1.3;
 
 }
 #container .furniture-informations p a{
@@ -60,6 +81,7 @@ body{
 #container .furniture-informations ul{
 	margin-left: 3rem;
 	font-size: 1.8rem;
+	line-height: 1.5;
 }
 #container .furniture-informations .buttons{
 	display: flex;
@@ -94,5 +116,101 @@ body{
 	padding: 1rem;
 	border-radius: 10px;
 	justify-content: center;
+}
+@media(min-width: 1080px){
+	#container #back{
+		margin: 2.0rem 0rem 2rem 5rem;
+        border: none;
+	}
+	#container hr:nth-child(3){
+		background-color: black;
+		margin: 0rem 5rem 3rem 5rem;;
+	}
+	#container hr:nth-child(5){
+		margin: 3rem 5rem 3rem 5rem;
+
+	}
+	#container #all{
+		display: flex;
+		align-items: center;
+	}
+	#container .image-furniture{
+		margin-left: 5rem;
+	
+	}
+	#container .image-furniture img{
+		grid-area: a;
+		height: 30rem;
+	}
+	#container .image-furniture p{
+		grid-area: b;
+	margin-bottom: 0;
+	}
+	#container .image-furniture .heart img{
+		height: 9rem;
+	}
+	#container .furniture-informations{
+		align-self: flex-start;
+		margin: 0 5rem 0 2rem;
+	}
+	#container .furniture-informations h1{
+		text-align: left;
+		margin: 1.5rem 1.5rem 0 1.5rem;
+	}
+	#container .furniture-informations .title{
+		font-size: 2.4rem;
+		color: var(--color-gray-one);
+		font-weight: 600;
+		margin-left: 1.5rem;
+	}
+	#container .furniture-informations p{
+		font-size: 1.8rem;
+		margin-left: 1.5rem;
+	
+	}
+	#container .furniture-informations p a{
+		color: #07A592;
+	}
+	#container .furniture-informations ul{
+		margin-left: 3rem;
+		font-size: 1.8rem;
+		line-height: 1.5;
+	}
+	#container .furniture-informations .buttons{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 1.5rem;
+		margin-left: 1.5rem;
+	}
+	#container .furniture-informations .buttons .whatsapp{
+		border: none;
+		font-size: 2.4rem;
+		background-color: #25D366;
+		font-weight: 700;
+		color: white;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 17.9rem;
+		padding: 1rem;
+		border-radius: 10px;
+	}
+	
+	#container .furniture-informations .buttons .gmail{
+		border: none;
+		font-size: 2.4rem;
+		background-color: #4C51C5;
+		font-weight: 700;
+		color: white;
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		width: 17.9rem;
+		padding: 1rem;
+		border-radius: 10px;
+		justify-content: center;
+	}
+
 
 }
