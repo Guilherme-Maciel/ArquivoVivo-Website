@@ -151,7 +151,9 @@ body{
     margin-bottom: 2.0rem;
     font-size: 1.9rem;
     margin-left: 0;
-    
+}
+#container .designer p a{
+    color: #07A592;
 }
 #container .designer h3{
     text-align: left;  
