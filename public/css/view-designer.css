@@ -16,18 +16,25 @@ body{
     background-color: var(--color-silver);
 }
 #container button{
-    margin: 2.0rem;
+    margin: 2.0rem 0rem 2rem 5rem;
+    border: none;
     font-family: Raleway, 'Sans Serif';
 }
 #container hr{
     background-color:var(--color-black);
     height: 0.1rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
 }
-
-#container .designer img{
-    width: 25rem;
-    height: 25rem;
-    margin-left: 4rem;
+#container .designer .image{
+    display: flex;
+    justify-content: center;
+}
+#container .designer .image img{
+    width: 40rem;
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
 
 }
 #container .designer h1{
@@ -43,19 +50,13 @@ body{
     font-size: 1.8rem;
     text-align: center;
     margin-bottom: 2.0rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
     
 }
 #container .designer h3{
     text-align: center;  
     font-size: 1.5rem;
-}
-#container .designer  a{
-    margin-bottom: 3.0rem;
-    text-decoration: none;
-    font-family: Raleway, 'Sans Serif';
-    font-size: 1.5rem;
-    text-align: center;
-    margin-left:8.0rem ;
 }
 
 
@@ -63,8 +64,11 @@ body{
     display:flex;
     flex-direction: column;
 }
+#container .designer-furnitures .inline {
+    display: inline-block;
+}
 
-#container .projetos{
+#container .designer-furnitures .inline .projetos{
     width: 130px;
     background: white;
     border-radius: 2.0rem;
@@ -73,25 +77,25 @@ body{
     display: inline-block;
     border: none;
     margin-left: 3.0rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
 
 }
 
 
-#container .projetos div{
+#container .designer-furnitures .inline .projetos div{
     height: 100px;
     border-radius: 2.0rem;
     background-size: cover;
     
 }
-#container .projetos h3{
+#container .designer-furnitures .inline .projetos h3{
     font-family: Raleway, 'Sans Serif';
     text-align: center;
     color: #FF4242;
     margin-top: 1.5rem;
     font-size: 1.2rem;
 }
-#container .projetos p{
+#container .designer-furnitures .inline .projetos p{
     text-align: center;
     font-family: Raleway, 'Sans Serif';
     font-size: 12px;
@@ -100,51 +104,101 @@ body{
 
 
 @media (min-width:1080px ){
+    #container hr{
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+    #container .designer .image{
+        display: inline-block;
+        margin-left: 5rem;
+       
+    }
 
 
 #container .designer{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    
 }
-#container .designer img{
-    width: 550px;
-    height: 550px;
+#container .designer .image img{
+    width: 450px;
+    border-radius: 20px;
+    margin-top: 0;
+    margin-bottom: 5rem;
+    
+
 }
 
 #container .designer div {
-    text-align: center;
-    justify-content: left;
+    margin-top: 4rem;
+    margin-left: 2rem;
+    margin-right: 5rem;
+
+}
+#container .designer h1{
+    text-align: left;
+    margin-top:0.1rem;
+    margin-bottom: 1.0rem;
+    font-size: 2.4rem;
+    font-family: Raleway, 'Sans Serif';
+
+
+}
+#container .designer p{
+    font-family: Raleway, 'Sans Serif';
+    font-size: 1.8rem;
+    text-align: left;
+    margin-bottom: 2.0rem;
+    font-size: 1.9rem;
+    margin-left: 0;
+    
+}
+#container .designer h3{
+    text-align: left;  
+    font-size: 1.5rem;
+}
+#container .designer-furnitures{
+    margin-left: 3rem;
+    margin-right: 3rem;
+
 }
 
-#container .projetos{
+
+#container .designer-furnitures .inline .projetos{
 
     width: 200px;
     height: 285px;
     background: white;
     border-radius: 20px;
     margin-right: 2.0rem;
-    margin-left: 4 .0rem;
+    margin-left: 2rem;
+    margin-top: 3rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr
 }
 
 
-#container .projetos div{
+#container .designer-furnitures .inline .projetos div{
     height: 17.0rem;
     border-radius: 2.0rem;
     background-size: cover;
 
 }
-#container .projetos h3{
+#container .designer-furnitures .inline .projetos h3{
     font-family: Raleway, 'Sans Serif';
     text-align: center;
     color: #FF4242;
     margin-top: 1.5rem;
     font-size: 1.8rem;
 }
-#container .projetos p{
+#container .designer-furnitures .inline .projetos p{
     text-align: center;
     font-family: Raleway, 'Sans Serif';
     font-size: 1.8rem;
     margin-top: 0.4rem;
+}
+#container .designer-furnitures .designer-furnitures{
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 }

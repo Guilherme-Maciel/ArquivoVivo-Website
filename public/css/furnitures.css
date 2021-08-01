@@ -20,7 +20,7 @@ body{
 #container h1{
     margin: 2rem 0 1.5rem 1.5rem;
     color:#2f2e2e;
-    font-size:24px;
+    font-size: 3.6rem;
     font-family: Raleway, 'Sans Serif';
 }
 
@@ -149,13 +149,30 @@ body{
 
 
 
-@media (min-width:1080px ){
+@media (min-width:1080px){
+    #container h1{
+        margin: 2rem 0 1.5rem 5rem;
+
+    }
+    
+    #container hr{
+        margin: 0 5rem;
+    }
+    #container .search-container{
+        margin-top: 1.5rem;
+        margin-right: 5rem;
+        margin-left: 5rem;
+        
+    }
+
     #container .furnitures-container .sample-furniture{
         width: 240px;
-        height: 285px;
+        height: auto;
         background: white;
         border-radius: 20px;
         margin-right: 2.0rem;
+        margin-top: 2.0rem;
+    }
     }
     
     
@@ -170,6 +187,7 @@ body{
         text-align: center;
         color: #FF4242;
         margin-top: 1.5rem;
+        padding-bottom: 1.5rem;
         font-size: 1.8rem;
     }
     #container section .furnitures-container .sample-furniture p{
@@ -178,5 +196,8 @@ body{
         font-size: 1.8rem;
         margin-top: 0.4rem;
     }
+    #container .filter-container{
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
 }
-
