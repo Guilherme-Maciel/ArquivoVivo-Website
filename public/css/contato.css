@@ -84,4 +84,77 @@ body{
     background: var(--color-gray-two);
     color: white;
 }
+@media (min-width: 1080px){
+    #container main .banner{
+        height: 33.9rem;
+    }
+    #container section h1{
+        margin: 2rem 0 1.5rem 5rem;
+        color:#2f2e2e;
+        font-size:3.6rem;
+        font-family: Raleway, 'Sans Serif';
+    }
+    
+    #container section hr{
+        background-color: black;
+        margin: 0 5rem;
+    }
+    
+    #container section form{
+        margin: 0 5rem;
+    }
+
+    #container section form input,
+#container section form textarea{
+    margin-top: 3rem;
+    border-radius: 1.5rem;
+    border: var(--color-gray) 0.1px solid;
+    font-size: 2.4rem;
+    font-family: Raleway, 'sans-serif';
+    padding: 0.5rem 1rem 0.5rem 1rem;
+}
+#container section form input:focus,
+#container section form textarea:focus{
+    outline: none;
+    border: var(--color-gray-one) 2px solid;
+}
+#container section form textarea{
+    resize: none;
+}
+#container section form .phone-number{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#container section form .phone-number input{
+    width: 44.8rem;
+}
+#container section form .end-buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+}
+#container section form .end-buttons .send{
+    width: 50rem;
+    height: 7rem;
+    border: none;
+    border-radius: 1.5rem;
+    font-size: 3.6rem;
+    font-weight: 300;
+    font-family: Raleway, 'Sans Serif';
+    background: var(--color-gray-one);
+    color: white;
+}
+#container section form .end-buttons .clear{
+    width: 50rem;
+    height: 7rem;
+    border: none;
+    border-radius: 1.5rem;
+    font-size: 3.6rem;
+    font-weight: 300;
+    font-family: Raleway, 'Sans Serif';
+    background: var(--color-gray-two);
+    color: white;
+}
+}
 
