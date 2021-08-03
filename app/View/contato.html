@@ -69,7 +69,7 @@
         <section>
             <h1>CONTATO</h1>
             <hr>
-            <form action="">
+            <form action="../Model/contact.php" method="POST">
                 <input type="text" name="name" placeholder="Nome*" required>
                 <input type="text" name="address" placeholder="Endereço (opcional)">
                 <div class="phone-number">
@@ -80,7 +80,7 @@
                 <textarea name="message" class="message" placeholder="Mensagem*" required wrap="soft"
                     rows="6"></textarea>
                 <div class="end-buttons">
-                    <button class="send">enviar</button>
+                    <button class="send" type="submit">enviar</button>
                     <button class="clear">limpar</button>
                 </div>
             </form>
@@ -126,5 +126,4 @@
         </footer>
     </div>
 </body>
-
 </html>
