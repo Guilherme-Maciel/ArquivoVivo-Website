@@ -1,0 +1,46 @@
+:root {
+    font-size: 62.5%;
+    --color-black: #000000;
+    --color-gray-one: #171717;
+    --color-gray-two: #2F2E2E;
+    --color-gray: #8B8B8B;
+    --color-silver: #EAEAEA;
+    --color-white: #FFFFFF;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Raleway, 'sans-serif';
+}
+body{
+    background: var(--color-silver);
+}
+#container .perfil-user {
+}
+#container .perfil-user h1{
+    margin-left: 2.0rem;
+    margin-top: 2.0rem;
+    margin-right: 2.0rem;
+    font-family: Raleway, 'Sans sefig';
+}
+#container .perfil-user p{
+    font-size: 1.6rem;
+    text-align: left;
+    margin-top:1.0rem;
+    margin-left:6.0rem;
+    font-family: Raleway, 'Sans sefig';
+}
+
+#container .perfil-user input {
+    border-radius: 8px;
+    margin-bottom:1.0rem;
+    margin-left:6.0rem;
+    width: 20.0rem;
+    height: 2.5rem;
+    border:1px solid var(--color-gray)
+}
+
+
+#container .perfil-user .n{
+    width: 5.0rem;
+}
