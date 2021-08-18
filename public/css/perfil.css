@@ -15,32 +15,105 @@
 body{
     background: var(--color-silver);
 }
-#container .perfil-user {
+#container main .perfil-title{
+    display: flex;
+    justify-content: space-between;
 }
-#container .perfil-user h1{
-    margin-left: 2.0rem;
+#container main .perfil-title span{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#container main .perfil-title span img{
+    height: 40%;
+}
+#container main hr,
+#container section hr{
+    background: #000000;
+}
+#container main{
+    margin:0 1.5rem ;
+
+}
+#container main h1{
     margin-top: 2.0rem;
-    margin-right: 2.0rem;
+    margin-bottom: 1.5rem;
     font-family: Raleway, 'Sans sefig';
+    font-size: 2.4rem;
 }
-#container .perfil-user p{
+#container main p{
     font-size: 1.6rem;
     text-align: left;
     margin-top:1.0rem;
-    margin-left:6.0rem;
     font-family: Raleway, 'Sans sefig';
 }
 
-#container .perfil-user input {
+#container main input {
     border-radius: 8px;
     margin-bottom:1.0rem;
-    margin-left:6.0rem;
-    width: 20.0rem;
+    width: 100%;
     height: 2.5rem;
     border:1px solid var(--color-gray)
 }
 
 
-#container .perfil-user .n{
+#container main .n{
     width: 5.0rem;
+}
+
+#container section{
+    margin:0 1.5rem ;
+}
+
+#container section h1{
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+}
+
+#container section p{
+    font-size: 1.6rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+@media(min-width: 1080px){
+    #container main, 
+    #container section{
+        margin:0 5rem ;
+    
+    }
+    #container main h1,
+    #container section h1{
+        font-size: 3.6rem;
+    }
+    #container main .perfil-title span{
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+    }
+    #container main .perfil-title span img{
+        height: 3.5rem;
+    }
+    #container main .n{
+        width: 100%;
+    }
+
+    #container main .input-box{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+
+    }
+    #container main .input-box .input-cep-num{
+        display: grid;
+        grid-template-columns: 6fr 1fr;
+        gap: 3rem;
+
+    }
+    #container section p{
+        margin: 0 36rem;
+        margin-top: 5rem;
+        font-size: 2.4rem;
+    }
+    
 }
