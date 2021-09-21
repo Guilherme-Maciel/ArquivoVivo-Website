@@ -137,25 +137,24 @@ body {
 }
 
 #container section .sample .container-furnitures .sample-furniture {
-    width: 16.65rem;
-    height: 16.5rem;
+    width: 8.3rem;
+    height: 8.25rem;
     background: var(--color-white);
-    border-radius: 2rem;
+    border-radius: 1rem;
+}
+#container section .sample .container-furnitures .sample-furniture:nth-child(4),
+#container section .sample .container-furnitures .sample-furniture:nth-child(5) 
+{
+    display: none;
 }
 
 #container section .sample .container-furnitures .sample-furniture div {
     width: 100%;
-    height: 75%;
-    border-radius: 2rem;
+    height: 100%;
+    border-radius: 1rem;
     background-size: cover;
 }
 
-#container section .sample .container-furnitures .sample-furniture h3 {
-    font: normal Raleway, 'Sans Serif';
-    text-align: center;
-    color: #FF4242;
-    margin-top: 1.5rem;
-}
 
 #container section .location .map {
     height: 26.85rem;
@@ -306,10 +305,20 @@ body {
         background: var(--color-white);
         border-radius: 2rem;
     }
-
-    #container section .sample .container-furnitures .sample-furniture h3 {
-        font-size: 2.4rem;
+    
+    #container section .sample .container-furnitures .sample-furniture div {
+        width: 100%;
+        height: 100%;
+        border-radius: 2rem;
+        background-size: cover;
     }
+
+#container section .sample .container-furnitures .sample-furniture:nth-child(4),
+#container section .sample .container-furnitures .sample-furniture:nth-child(5) 
+{
+    display: flex;
+}
+
 
     #container section .location .flex-location {
         display: flex;

@@ -87,7 +87,7 @@ body{
 }
 
 #container .furnitures-container .sample-furniture{
-    width: 130px;
+    width: 100px;
     background: white;
     border-radius: 20px;
 }
@@ -111,6 +111,10 @@ body{
     font-family: Raleway, 'Sans Serif';
     font-size: 12px;
     margin-top: 4px;
+    line-height: 2rem;
+    height: 4rem;
+    overflow: hidden;
+
 }
 
 #container .selection-furnitures  nav{
@@ -172,7 +176,6 @@ body{
         border-radius: 20px;
         margin-right: 2.0rem;
         margin-top: 2.0rem;
-    }
     }
     
     
