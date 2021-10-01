@@ -6,31 +6,54 @@ use PDO;
 use PDOException;
 
 class Database{
+    const HOST = 'localhost';
+    const NAME = 'arquivovivomv';
+    const USER = 'root';
+    const PASS = '';
+
+    private $table;
+    private $connection;
+
+    public function __construct($table)
+    {
+        $this->table = $table;
+        $this->setConnection();
+    }
+
+    private function setConnection(){
+        try{
+            $this->connection = new PDO('mysql:host='.self::HOST.';dbname='.self::NAME,self::USER,self::PASS);
+            $this->connection->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+
+        }catch(PDOException $e){
+            die('ERROR:'.$e->getMessage());
+
+        }
+    }
+
+    public function execute($query,$params = []){
+        try{
+            $statement = $this->connection->prepare($query);
+            $statement->execute($params);
+            return $statement;
+        }catch(PDOException $e){
+            die('ERROR:'.$e->getMessage());
+
+        }
+    }
  
     public function insert($values){
-    $sql = new PDO('mysql:host=localhost;dbname=arquivovivomv', 'root', '');
-    $sql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $fields = array_keys($values);
+       $values = array_filter($values);
+       $fields = array_keys($values);
+       $binds = array_pad([],count($fields),'?');
 
-    echo "INSERT INTO clientes (".implode(',',$fields).") VALUES(".implode(',', $values).")";
+       $query = "INSERT INTO ".$this->table." (".implode(',',$fields).") VALUES(".implode(',', $binds).")";
 
-/*
-try {
-        $sql->beginTransaction();
-        $sql->exec("INSERT INTO clientes (".implode(',',$fields).") VALUES(".implode(',', $values).")");
-        //$sql->commit();
-        echo"dados salvos cachorro"; 
-    } catch (PDOException $error) {
-        $sql->rollBack();
-        
-    }
-*/ 
+       $this->execute($query,array_values($values));
 
-
-
+       return $this->connection->lastInsertId();
 
     }
-
 
 }

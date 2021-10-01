@@ -80,7 +80,7 @@
                 <div class="cadaster-div">
                     <a href="#fechar" title="Fechar" class="fechar">x</a>
                     <p><img src="../../public/images/cadaster-logo.svg" alt="Arquivo Vivo"></p>
-                    <form action="">
+                    <form method="post" action="../Model/Register.php">
                         <div>
                             <label for="name">nome:</label>
                             <input type="text" name="name">
