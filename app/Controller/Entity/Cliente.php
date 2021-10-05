@@ -78,11 +78,4 @@ class Cliente{
 
     }
 
-
-
-
-
-
-
-
 }

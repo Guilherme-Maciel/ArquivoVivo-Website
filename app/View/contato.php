@@ -69,7 +69,7 @@
         <section>
             <h1>CONTATO</h1>
             <hr>
-            <form action="../Model/contact.php" method="POST">
+            <form action="../Model/Contact.php" method="POST">
                 <input type="text" name="name" placeholder="Nome*" required>
                 <input type="text" name="address" placeholder="Endereço (opcional)">
                 <div class="phone-number">

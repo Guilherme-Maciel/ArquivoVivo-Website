@@ -56,4 +56,17 @@ class Database{
 
     }
 
+     public function select($where = null, $order = null, $limit = null, $fields = '*'){
+        $where = strlen($where) ? 'WHERE '.$where : '';
+        $order = strlen($order) ? 'ORDER BY '.$order : '';
+        $limit = strlen($limit) ? 'LIMIT '.$limit : '';
+
+        //query
+        $query = 'SELECT '.$fields.' FROM '.$this->table.' '.$where.' '.$order.' '.$limit;
+
+        //execução
+        return $this->execute($query);
+
+    }
+
 }

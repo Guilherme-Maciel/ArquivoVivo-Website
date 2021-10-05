@@ -1,3 +1,29 @@
+<?php
+    require __DIR__.'../../../vendor/autoload.php';
+    use App\Controller\Entity\Movel;
+
+
+    $results = '';
+    $furnitures= Movel::getMoveis();
+
+    foreach($furnitures as $furniture){
+        $results .= '
+        <fieldset>
+            <article onclick="window.location.href = `viewMoveis.html`">
+                <div class="sample-furniture">
+                    <div style="background-image: url(data:'.$furniture->m_typeImg.';base64,'.base64_encode($furniture->m_imagem).'); "></div>
+                    <p><strong>'.$furniture->m_titulo.'</strong></p>
+                    <h3>'.$furniture->m_categoria.'</h3>
+                </div>
+            </article>
+        </fieldset>
+        ';
+
+    }
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,96 +114,7 @@
         <section>
             <div class="furnitures-container">
                 <div>
-                    <fieldset>
-                        <article onclick="window.location.href = 'viewMoveis.html'">
-                            <div class="sample-furniture">
-                                <div style="background-image: url(../../public/images/cadeira2.jpg);"></div>
-                                <p><strong>Ambiente - Poltrona Swift</strong></p>
-                                <h3>CADEIRA</h3>
-                            </div>
-                        </article>
-                    </fieldset>
-                    <fieldset>
-                        <article>
-                            <div class="sample-furniture">
-                                <div style="background-image: url(../../public/images/cadeira2.jpg);"></div>
-                                <p><strong>Ambiente - Poltrona Swift</strong></p>
-                                <h3>CADEIRA</h3>
-                            </div>
-                        </article>
-                    </fieldset>
-                    <fieldset>
-                        <article>
-                            <div class="sample-furniture">
-                                <div style="background-image: url(../../public/images/cadeira2.jpg);"></div>
-                                <p><strong>Ambiente - Poltrona Swift - bla bla bla, só pra completar o espaço para teste</strong></p>
-                                <h3>CADEIRA</h3>
-                            </div>
-                        </article>
-                    </fieldset>
-                    <fieldset>
-                        <article>
-                            <div class="sample-furniture">
-                                <div style="background-image: url(../../public/images/cadeira2.jpg);"></div>
-                                <p><strong>Ambiente - Poltrona Swift</strong></p>
-                                <h3>CADEIRA</h3>
-                            </div>
-                        </article>
-                    </fieldset>
-                    <fieldset>
-                        <article>
-                            <div class="sample-furniture">
-                                <div style="background-image: url(../../public/images/cadeira2.jpg);"></div>
-                                <p><strong>Ambiente - Poltrona Swift</strong></p>
-                                <h3>CADEIRA</h3>
-                            </div>
-                        </article>
-                    </fieldset>
-                    <fieldset>
-                        <article>
-                            <div class="sample-furniture">
-                                <div style="background-image: url(../../public/images/cadeira2.jpg);"></div>
-                                <p><strong>Ambiente - Poltrona Swift</strong></p>
-                                <h3>CADEIRA</h3>
-                            </div>
-                        </article>
-                    </fieldset>
-                    <fieldset>
-                        <article>
-                            <div class="sample-furniture">
-                                <div style="background-image: url(../../public/images/cadeira2.jpg);"></div>
-                                <p><strong>Ambiente - Poltrona Swift</strong></p>
-                                <h3>CADEIRA</h3>
-                            </div>
-                        </article>
-                    </fieldset>
-                    <fieldset>
-                        <article>
-                            <div class="sample-furniture">
-                                <div style="background-image: url(../../public/images/cadeira2.jpg);"></div>
-                                <p><strong>Ambiente - Poltrona Swift</strong></p>
-                                <h3>CADEIRA</h3>
-                            </div>
-                        </article>
-                    </fieldset>
-                    <fieldset>
-                        <article>
-                            <div class="sample-furniture">
-                                <div style="background-image: url(../../public/images/cadeira2.jpg);"></div>
-                                <p><strong>Ambiente - Poltrona Swift</strong></p>
-                                <h3>CADEIRA</h3>
-                            </div>
-                        </article>
-                    </fieldset>
-                    <fieldset>
-                        <article>
-                            <div class="sample-furniture">
-                                <div style="background-image: url(../../public/images/cadeira2.jpg);"></div>
-                                <p><strong>Ambiente - Poltrona Swift</strong></p>
-                                <h3>CADEIRA</h3>
-                            </div>
-                        </article>
-                    </fieldset>
+                  <?=$results?>
                 </div>
         </section>
         <div class="selection-furnitures">

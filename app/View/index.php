@@ -50,7 +50,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="contato.html"><img src="../../public/images/contato-icon.svg">
+                        <a href="contato.php"><img src="../../public/images/contato-icon.svg">
                             <spam>Contato</spam>
                         </a>
                     </li>
@@ -74,6 +74,15 @@
                     <button class="btn-cadaster" onclick="window.location.href = '#cadasterModal'">cadastrar</button>
                     <button class="btn-login" onclick="window.location.href = '#loginModal'">login</button>
                     <button class="btn-portfolio">portfólio</button>
+                </div>
+            </div>
+            <div id="confirmCadasterModal" class="modal">
+                <div class="confirm-div">
+                    <a href="#fechar" title="Fechar" class="fechar">x</a>
+                    <p><img src="../../public/images/checked.svg" alt="Arquivo Vivo"></p>
+                    <h1>CADASTRO EFETUADO COM SUCESSO!!!</h1>
+                    <p>Logue para acessar o seu perfil e curtir móveis :)</p>
+                    <p><button class="btn-redirect-login">LOGIN</button></p>
                 </div>
             </div>
             <div id="cadasterModal" class="modal">
