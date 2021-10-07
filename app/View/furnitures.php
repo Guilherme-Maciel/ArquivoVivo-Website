@@ -9,7 +9,7 @@
     foreach($furnitures as $furniture){
         $results .= '
         <fieldset>
-            <article onclick="window.location.href = `viewMoveis.html`">
+            <article onclick="window.location.href = `viewMoveis.php?id='.$furniture->m_id.'`">
                 <div class="sample-furniture">
                     <div style="background-image: url(data:'.$furniture->m_typeImg.';base64,'.base64_encode($furniture->m_imagem).'); "></div>
                     <p><strong>'.$furniture->m_titulo.'</strong></p>
@@ -18,11 +18,7 @@
             </article>
         </fieldset>
         ';
-
     }
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,50 +40,7 @@
 
 <body>
     <div id="container">
-        <header>
-            <img src="../../public/images/logo.svg" id="logo">
-            <input type="checkbox" id="bt_menu" />
-            <label for="bt_menu">&#9776;</label>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="index.html"><img src="../../public/images/home-icon.svg">
-                            <spam>Home</spam>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="furnitures.html"><img src="../../public/images/movel-icon.svg">
-                            <spam>Móveis</spam>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="designers.html"><img src="../../public/images/designer-icon.svg">
-                            <spam>Designers</spam>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="reformas.html"><img src="../../public/images/reforma-icon.svg">
-                            <spam>Reforma</spam>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="locacao.html"><img src="../../public/images/locacao-icon.svg">
-                            <spam>Locação</spam>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="contato.html"><img src="../../public/images/contato-icon.svg">
-                            <spam>Contato</spam>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="perfil.html"><img src="../../public/images/perfil-icon.svg">
-                            <spam>Perfil</spam>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+    <?= include 'includes/header.php'?>
         <main>
             <h1>MÓVEIS</h1>
             <hr>
@@ -142,49 +95,8 @@
                 </li>
             </nav>
         </div>
-        <footer>
-            <div class="main-footer">
-                <img src="../../public/images/logo-white.svg" alt="logo">
-                <div class="content-footer">
-                    <ul>
-                        <h2>ATENDIMENTO</h2>
-                        <li> Segunda à Sexta - 10h às 20h</li>
-                        <li> Sàbado: apenas agendamento.</li>
-                    </ul>
-
-                    <ul>
-                        <h2>ENDEREÇO|CONTATO</h2>
-                        <li>Rua Lira, 159 - Vila Madalena, São Paulo - SP</li>
-                        <li>Telefone: +55 (11) 3034-1279</li>
-                        <li>Whatsapp: +55 (11) 95607-3034</li>
-                        <li>vendas@arquivovivomoveis.com.br</li>
-                    </ul>
-
-                    <ul>
-                        <h2>PÁGINAS</h2>
-                        <li><a href="#">Contato</a></li>
-                        <li><a href="#">Moveís</a></li>
-                        <li><a href="#">Designers</a></li>
-                        <li><a href="#">Reforma</a></li>
-                        <li><a href="#">Locação</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="social">
-                <a href="#"><img src="../../public/images/instagram-footer.svg" alt="instagram"></a>
-                <a href="#"><img src="../../public/images/facebook-footer.svg" alt="facebook"></a>
-            </div>
-            <div class="copyright">
-                <spam>
-                    <p>@Copyright Todos os direitos reservados</p>
-                    <p>Desenvolvido por: Proguizo - contato: 11 94270-4521</p>
-                </spam>
-            </div>
-        </footer>
+        <?= include 'includes/footer.php'?>
     </div>
 
 </body>
-
-
-
 </html>
