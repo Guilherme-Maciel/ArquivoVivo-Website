@@ -156,7 +156,7 @@ body {
 }
 
 
-#container section .location .map {
+#container section .location #mapid {
     height: 26.85rem;
     border: 0.2rem black solid;
     border-radius: 2rem;
@@ -336,7 +336,7 @@ body {
 
     }
 
-    #container section .location .flex-location .map {
+    #container section .location .flex-location #mapid {
         width: 70rem;
         height: 50rem;
         margin-right: 3rem;

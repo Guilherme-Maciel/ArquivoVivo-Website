@@ -19,7 +19,7 @@
 
 <body>
     <div id="container">
-    <?= include 'includes/header.php' ?>
+    <?php include 'includes/header.php' ?>
         <main>
             <div class="perfil-title">
                 <h1>SEU PERFIL</h1>
@@ -98,7 +98,7 @@
                 confira nosso portifólio
             </p>
         </section>
-        <?= include 'includes/footer.php'?>
+        <?php include 'includes/footer.php'?>
     </div>
 </body>
 

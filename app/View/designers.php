@@ -7,6 +7,8 @@
     <link rel="stylesheet" type="text/css" href="../../public/css/designers.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/header.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/animations.css">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -18,7 +20,7 @@
 
 <body>
     <div id="container">
-    <?= include 'includes/header.php'?>
+    <?php include 'includes/header.php'?>
         <main>
             <h1>DESIGNERS</h1>
             <hr>
@@ -105,7 +107,7 @@
                 </nav>
             </div>
         </section>
-        <?= include 'includes/footer.php'?>
+        <?php include 'includes/footer.php'?>
     </div>
 
 </body>

@@ -19,7 +19,7 @@
 
 <body>
     <div id="container">
-    <?= include 'includes/header.php'?>
+    <?php include 'includes/header.php'?>
         <img class="img" src="../../public/images/banner-reforma.svg">
         <br>
         <h1>LOCAÇÃO</h1>
@@ -52,6 +52,6 @@
                 <P><strong>&#10003; +55 (11) 99912-7228</strong></P>
             </div>
         </div>
-        <?= include 'includes/footer.php'?>
+        <?php include 'includes/footer.php'?>
     </div>
 </body>

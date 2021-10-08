@@ -9,8 +9,18 @@
     <link rel="stylesheet" type="text/css" href="../../public/css/header.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/footer.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/modal.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/animations.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
     <link
         href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,100&display=swap"
         rel="stylesheet">
@@ -18,19 +28,21 @@
 </head>
 <body>
     <div id="container">
-        <?= include 'includes/header.php'?>
+        <?php
+        include 'includes/header.php';
+        ?>
         <main>
             <div class="img-carousel" style="background-image: url(../../public/images/carousel.svg);background-size: cover;">
-                <h1>ARQUIVO VIVO MÓVEIS</h1>
-                <p>
+                <h1 class="animate-up">ARQUIVO VIVO MÓVEIS</h1>
+                <p class="animate-up">
                     Móveis <strong>ORIGINAIS</strong>, 100%
                     <strong>SUSTENTÁVEIS</strong> fazendo sempre o seu mais refinado
                     <strong>ESTILO</strong>
                 </p>
                 <div class="group-buttons">
-                    <button class="btn-cadaster" onclick="window.location.href = '#cadasterModal'">cadastrar</button>
-                    <button class="btn-login" onclick="window.location.href = '#loginModal'">login</button>
-                    <button class="btn-portfolio">portfólio</button>
+                    <button class="btn-cadaster animate-up-buttons" onclick="window.location.href = '#cadasterModal'">cadastrar</button>
+                    <button class="btn-login animate-up-buttons" onclick="window.location.href = '#loginModal'">login</button>
+                    <button class="btn-portfolio animate-up-buttons">portfólio</button>
                 </div>
             </div>
             <div id="confirmCadasterModal" class="modal">
@@ -165,7 +177,7 @@
                 <h1>LOCALIZAÇÃO e CONTATO</h1><br>
                 <hr><br>
                 <div class="flex-location">
-                    <div class="map"></div>
+                    <div id="mapid"></div>
                     <div class="address-contact">
                         <div>
                             <h1>Endereço:</h1>
@@ -183,7 +195,7 @@
             <div class="social">
                 <h1>MÍDIAS SOCIAIS</h1><br>
                 <hr><br>
-                <div id="social-container">
+                <div id="social-container" onclick="window.location.href = '#cadasterModal'">
                     <div class="instagram">
                         <img src="../../public/images/instagram.svg" alt="instagram">
                         <h2>INSTAGRAM</h2>
@@ -191,13 +203,14 @@
                     <div class="facebook">
                         <img src="../../public/images/facebook.svg" alt="facebook">
                         <h2>FACEBOOK</h2>
-
                     </div>
                 </div>
             </div>
         </section>
-       <?= include 'includes/footer.php'?>
+       <?php 
+       include 'includes/footer.php'
+       ?>
     </div>
+    <script src="../../public/scripts/map-index.js"></script>
 </body>
-
 </html>

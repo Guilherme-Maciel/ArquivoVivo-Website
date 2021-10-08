@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="../../public/css/header.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/footer.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/contato.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/animations.css">
+
     <link
         href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,100&display=swap"
         rel="stylesheet">
@@ -18,15 +20,13 @@
 
 <body>
     <div id="container">
-    <?= include 'includes/header.php'?>
+    <?php include 'includes/header.php'?>
         <main>
-            <div class="banner">
-            </div>
         </main>
         <section>
             <h1>CONTATO</h1>
             <hr>
-            <form action="../Model/Contact.php" method="POST">
+            <form class="animate-up" action="../Model/Contact.php" method="POST">
                 <input type="text" name="name" placeholder="Nome*" required>
                 <input type="text" name="address" placeholder="Endereço (opcional)">
                 <div class="phone-number">
@@ -42,7 +42,7 @@
                 </div>
             </form>
         </section>
-        <?= include 'includes/footer.php'?>
+        <?php include 'includes/footer.php'?>
     </div>
 </body>
 </html>

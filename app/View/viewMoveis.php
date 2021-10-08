@@ -64,12 +64,12 @@
 
 <body>
     <div id="container">
-    <?= include 'includes/header.php'?>
+    <?php include 'includes/header.php'?>
         <button id="back" onClick="history.go(-1)"><img src="../../public/images/arrow.svg" alt="arrow"></button>
         <hr>
         <?=$results?>
         <hr>
-        <?= include 'includes/footer.php'?>
+        <?php include 'includes/footer.php'?>
     </div>
 </body>
 </html>

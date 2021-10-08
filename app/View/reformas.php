@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="../../public/css/reformas.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/header.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/animations.css">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -19,13 +21,13 @@
 
 <body>
     <div id="container">
-    <?= include 'includes/header.php'?>
+    <?php include 'includes/header.php'?>
         <img class="img" src="../../public/images/banner-reforma.svg">
         <br>
         <h1>REFORMA</h1>
         <br>
         <hr>
-        <div class="batata">
+        <div class="batata animate-up">
             <div class="reforma-info">
                 <h2>REFORMA FLEX</h2>
                 <p>
@@ -53,6 +55,6 @@
                 <P><strong>&#10003; +55 (11) 5631-7278</strong></P>
             </div>
         </div>
-        <?= include 'includes/footer.php'?>
+        <?php include 'includes/footer.php'?>
     </div>
 </body>

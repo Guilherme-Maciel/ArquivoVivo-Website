@@ -19,7 +19,7 @@
 
 <body>
     <div id="container">
-    <?= include 'includes/header.php'?>
+    <?php include 'includes/header.php'?>
         <button onClick="history.go(-1)"><img src="../../public/images/arrow.svg" alt="arrow"></button>
         <hr>
         <div class="designer">
@@ -101,5 +101,5 @@
         </div>
     </div>
 </div>
-<?= include 'includes/footer.php'?>
+<?php include 'includes/footer.php'?>
 </body>
