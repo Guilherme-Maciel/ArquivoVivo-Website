@@ -14,18 +14,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-    crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,100&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,100&display=swap" rel="stylesheet">
     <title>Arquivo Vivo - Home</title>
 </head>
+
 <body>
     <div id="container">
         <?php
@@ -42,7 +37,7 @@
                 <div class="group-buttons">
                     <button class="btn-cadaster animate-up-buttons" onclick="window.location.href = '#cadasterModal'">cadastrar</button>
                     <button class="btn-login animate-up-buttons" onclick="window.location.href = '#loginModal'">login</button>
-                    <button class="btn-portfolio animate-up-buttons">portfólio</button>
+                    <button class="btn-portfolio animate-up-buttons" onclick="window.location.href = 'furnitures.php'">portfólio</button>
                 </div>
             </div>
             <div id="confirmCadasterModal" class="modal">
@@ -82,7 +77,7 @@
                         <p><button type="submit">CADASTRAR</button></p>
                         <p><a href="#">Já possuo cadastro</a></p>
                     </form>
-                    
+
                 </div>
             </div>
             <div id="loginModal" class="modal">
@@ -185,8 +180,7 @@
                             <h1 class="contact-h1">Contato:</h1>
                             <p>Telefone: +55 (11) 3034-1279</p>
                             <p>WhatsApp: +55 (11) 95607-3034</p>
-                            <p>Email: <a href="mailto:vendas@arquivovivomoveis.com.br"
-                                    style="text-decoration: none;">vendas@arquivovivomoveis.com.br</a>
+                            <p>Email: <a href="mailto:vendas@arquivovivomoveis.com.br" style="text-decoration: none;">vendas@arquivovivomoveis.com.br</a>
                             </p>
                         </div>
                     </div>
@@ -195,22 +189,27 @@
             <div class="social">
                 <h1>MÍDIAS SOCIAIS</h1><br>
                 <hr><br>
-                <div id="social-container" onclick="window.location.href = '#cadasterModal'">
-                    <div class="instagram">
-                        <img src="../../public/images/instagram.svg" alt="instagram">
-                        <h2>INSTAGRAM</h2>
-                    </div>
-                    <div class="facebook">
-                        <img src="../../public/images/facebook.svg" alt="facebook">
-                        <h2>FACEBOOK</h2>
-                    </div>
+                <div id="social-container">
+                    <a href="https://www.instagram.com/arquivovivo/" target="_blank">
+                        <div class="instagram">
+                            <img src="../../public/images/instagram.svg" alt="instagram">
+                            <h2>INSTAGRAM</h2>
+                        </div>
+                    </a>
+                    <a href="https://www.facebook.com/arquivovivo/" target="_blank">
+                        <div class="facebook">
+                            <img src="../../public/images/facebook.svg" alt="facebook">
+                            <h2>FACEBOOK</h2>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
-       <?php 
-       include 'includes/footer.php'
-       ?>
+        <?php
+        include 'includes/footer.php'
+        ?>
     </div>
     <script src="../../public/scripts/map-index.js"></script>
 </body>
+
 </html>

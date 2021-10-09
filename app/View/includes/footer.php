@@ -18,17 +18,17 @@
 
                     <ul>
                         <h2>PÁGINAS</h2>
-                        <li><a href="#">Contato</a></li>
-                        <li><a href="#">Moveís</a></li>
-                        <li><a href="#">Designers</a></li>
-                        <li><a href="#">Reforma</a></li>
-                        <li><a href="#">Locação</a></li>
+                        <li><a href="contato.php">Contato</a></li>
+                        <li><a href="furnitures.php">Moveís</a></li>
+                        <li><a href="designers.php">Designers</a></li>
+                        <li><a href="reformas.php">Reforma</a></li>
+                        <li><a href="locacao.php">Locação</a></li>
                     </ul>
                 </div>
             </div>
             <div class="social">
-                <a href="#"><img src="../../public/images/instagram-footer.svg" alt="instagram"></a>
-                <a href="#"><img src="../../public/images/facebook-footer.svg" alt="facebook"></a>
+                <a href="https://www.instagram.com/arquivovivo/" target="_blank"><img src="../../public/images/instagram-footer.svg" alt="instagram"></a>
+                <a href="https://www.facebook.com/arquivovivo/" target="_blank"><img src="../../public/images/facebook-footer.svg" alt="facebook"></a>
             </div>
             <div class="copyright">
                 <spam>

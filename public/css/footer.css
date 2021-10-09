@@ -55,6 +55,9 @@
   margin-top: 2.5rem;
   gap: 16.9rem;
 }
+#container footer .social a:hover{
+  opacity: 0.8;
+}
 
 #container footer .social a img{
   width: 6rem;

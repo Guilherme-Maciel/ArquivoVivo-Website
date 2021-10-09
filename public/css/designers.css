@@ -62,9 +62,14 @@ body{
     border-radius: 2rem;
     display: flex;
     flex-direction: column;
+    
 }
-#container section .designer img{
+#container section .designer .img{
+    background-size: cover;
     height: 20rem;
+    width: 20rem;
+    border-radius: 2rem;
+    align-self: center;
 }
 #container section .designer .information-designer .title{
     text-align: center;
@@ -78,6 +83,8 @@ body{
     font-size: 1.3rem;
     margin-top: 1rem;
     line-height: 1.5;
+    height: 26rem;
+    overflow: hidden;
 
 }
 #container section .designer .information-designer a{
@@ -127,8 +134,9 @@ body{
         display: flex;
         flex-direction: row;
     }
-    #container section .designer img{
-        height: 100%;
+    #container section .designer .img{
+        height: 35.222rem;
+        min-width: 34.5rem;
         align-self: center;
     }
     #container section .designer .information-designer{

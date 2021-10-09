@@ -1,3 +1,29 @@
+<?php
+require __DIR__ . '../../../vendor/autoload.php';
+
+use App\Controller\Entity\Designer;
+
+
+$results = '';
+$designers = Designer::getDesigners();
+
+foreach ($designers as $designer) {
+    $results .= '
+    <div class="designer">
+    <div class="img" style="background-image: url(data:'.$designer->d_typeImg.';base64,'.base64_encode($designer->d_imagem).')"></div>
+    <div class="information-designer">
+        <p class="title"><strong> '.strtoupper($designer->d_nome).' </strong> (29 móveis disponíveis)</p>
+        <p class="description">
+            '.$designer->d_bio.'
+        </p>
+        <a href="#">+ INFO</a>
+
+    </div>
+</div>
+        ';
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,57 +56,7 @@
             </div>
         </main>
         <section>
-            <div class="designer">
-                <img src="../../public/images/charles.svg" alt="">
-                <div class="information-designer">
-                    <p class="title"><strong>CHARLES E RAY EAMES</strong> (29 móveis disponíveis)</p>
-                    <p class="description">
-                        Charles (1907- 1978) e Ray Eames (1912- 1989) são duas das figuras 
-                        mais proeminentes do design do século XX. O chamado ?EURoeCasal de 
-                        Ouro?EUR? do design americano do pós-guerra foi pioneiro em diversas 
-                        áreas como multimídia, projetos avançados de móveis, arquitetura, 
-                        design gráfico, fotografia e cinema. A notável liberdade de suas obras,
-                         assim como suas pesquisas intensivas na busca de novas soluções, 
-                         tiveram enorme influência no estilo de móveis....
-                    </p>
-                    <a href="view-Designers.html">+ INFO</a>
-
-                </div>
-            </div>
-            <div class="designer">
-                <img src="../../public/images/charles.svg" alt="">
-                <div class="information-designer">
-                    <p class="title"><strong>CHARLES E RAY EAMES</strong> (29 móveis disponíveis)</p>
-                    <p class="description">
-                        Charles (1907- 1978) e Ray Eames (1912- 1989) são duas das figuras 
-                        mais proeminentes do design do século XX. O chamado ?EURoeCasal de 
-                        Ouro?EUR? do design americano do pós-guerra foi pioneiro em diversas 
-                        áreas como multimídia, projetos avançados de móveis, arquitetura, 
-                        design gráfico, fotografia e cinema. A notável liberdade de suas obras,
-                         assim como suas pesquisas intensivas na busca de novas soluções, 
-                         tiveram enorme influência no estilo de móveis....
-                    </p>
-                    <a href="#">+ INFO</a>
-
-                </div>
-            </div>
-            <div class="designer">
-                <img src="../../public/images/charles.svg" alt="">
-                <div class="information-designer">
-                    <p class="title"><strong>CHARLES E RAY EAMES</strong> (29 móveis disponíveis)</p>
-                    <p class="description">
-                        Charles (1907- 1978) e Ray Eames (1912- 1989) são duas das figuras 
-                        mais proeminentes do design do século XX. O chamado ?EURoeCasal de 
-                        Ouro?EUR? do design americano do pós-guerra foi pioneiro em diversas 
-                        áreas como multimídia, projetos avançados de móveis, arquitetura, 
-                        design gráfico, fotografia e cinema. A notável liberdade de suas obras,
-                         assim como suas pesquisas intensivas na busca de novas soluções, 
-                         tiveram enorme influência no estilo de móveis....
-                    </p>
-                    <a href="#">+ INFO</a>
-
-                </div>
-            </div>
+            <?=$results?>
             <div class="selection-furnitures">
                 <nav>
                     <li>

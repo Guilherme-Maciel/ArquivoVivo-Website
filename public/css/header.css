@@ -31,7 +31,9 @@
 
 #container header nav ul li{
     float: left;
+    ;
 }
+
 
 #container header nav a{
     font-family: Raleway, 'Sans Serif';
@@ -41,6 +43,10 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    transition: transform .2s;
+}
+#container header nav a:hover{
+    transform: scale(1.1);
 }
 
 #container header img{
@@ -90,7 +96,6 @@
         margin-top: 1rem;
         width: 20rem;
     }
-
 
 }
 

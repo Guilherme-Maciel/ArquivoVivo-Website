@@ -220,6 +220,7 @@ body {
         font-size: 4.3rem;
         font-family: Raleway, 'Sans Serif';
         font-weight: 300;
+        cursor: pointer;
     }
 
     #container main .img-carousel .group-buttons .btn-cadaster {
@@ -347,11 +348,27 @@ body {
         align-items: center;
 
     }
-
+    #container section .social #social-container a{
+        text-decoration: none;
+        color: var(--color-black);
+    }
+    #container section .social #social-container .instagram,
+    #container section .social #social-container .facebook {
+        cursor: pointer;
+    }
+    
     #container section .social #social-container .instagram img,
     #container section .social #social-container .facebook img {
         width: 25rem;
+        transition: transform .2s;
     }
+
+    #container section .social #social-container .instagram img:hover,
+    #container section .social #social-container .facebook img:hover {
+        transform: scale(1.05);
+        
+    }
+
 
     #container section .social #social-container .facebook h2,
     #container section .social #social-container .instagram h2 {

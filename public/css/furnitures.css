@@ -83,7 +83,12 @@ body{
     border: none;
     margin-left: 1rem;
     margin-top: 1rem;
+    transition: transform .2s;
+    cursor: pointer;
 
+}
+#container section .furnitures-container fieldset:hover{
+    transform: scale(1.1);
 }
 
 #container .furnitures-container .sample-furniture{
@@ -203,5 +208,12 @@ body{
     #container .filter-container{
         margin-left: 5rem;
         margin-right: 5rem;
+    }
+    #container .filter-container a{
+        transition: .2s;
+    }
+    #container .filter-container a:hover{
+        color: var(--color-gray);
+        
     }
 }

@@ -14,7 +14,7 @@ foreach ($furnitures as $furniture) {
                 <div class="sample-furniture">
                     <div style="background-image: url(data:' . $furniture->m_typeImg . ';base64,' . base64_encode($furniture->m_imagem) . '); "></div>
                     <p><strong>' . $furniture->m_titulo . '</strong></p>
-                    <h3>' . $furniture->m_categoria . '</h3>
+                    <h3>' . strtoupper($furniture->m_categoria) . '</h3>
                 </div>
             </article>
         </fieldset>
