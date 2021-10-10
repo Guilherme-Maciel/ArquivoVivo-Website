@@ -12,11 +12,11 @@ foreach ($designers as $designer) {
     <div class="designer">
     <div class="img" style="background-image: url(data:'.$designer->d_typeImg.';base64,'.base64_encode($designer->d_imagem).')"></div>
     <div class="information-designer">
-        <p class="title"><strong> '.strtoupper($designer->d_nome).' </strong> (29 móveis disponíveis)</p>
+        <p class="title"><strong> '.strtoupper(utf8_encode($designer->d_nome)).' </strong> (29 móveis disponíveis)</p>
         <p class="description">
-            '.$designer->d_bio.'
+            '.utf8_encode($designer->d_bio).'
         </p>
-        <a href="#">+ INFO</a>
+        <a href="viewDesigners.php?id='.$designer->d_id.'">+ INFO</a>
 
     </div>
 </div>
@@ -25,7 +25,7 @@ foreach ($designers as $designer) {
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

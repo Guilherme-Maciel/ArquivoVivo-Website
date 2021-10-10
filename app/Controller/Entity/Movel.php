@@ -16,6 +16,7 @@ class Movel{
     public $m_categoria;
     public $m_imagem;
     public $m_typeImg;
+    public $d_id;
 
     public static function getMoveis($where = null, $order = null, $limit = null){
         return (new Database('moveis'))->select($where,$order,$limit)
@@ -23,6 +24,10 @@ class Movel{
     }
     public static function getMovel($id){
         return (new Database('moveis'))->select('m_id = '.$id)
+        ->fetchObject(self::class);
+    }
+    public static function getMovelByDesigner($id){
+        return (new Database('moveis'))->select('d_id = '.$id)
         ->fetchObject(self::class);
     }
 

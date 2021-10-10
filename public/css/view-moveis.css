@@ -50,9 +50,13 @@ body{
 #container .image-furniture .heart img{
 	height: 7rem;
 }
-#container .image-furniture p span{
+#container .image-furniture p .dis{
 	font-weight: 500;
 	color:#00DF31
+}
+#container .image-furniture p .indis{
+	font-weight: 500;
+	color:#eb0000
 }
  
 #container .image-furniture img {

@@ -8,24 +8,33 @@
     }
 
     $results = '';
+    $dispo = '';
     $furniture = Movel::getMovel($_GET['id']);
+    
+
+    if($furniture->m_qtdEstoque <= 0){
+        $dispo = '<span class="indis">INDISPONÍVEL</span>';
+    }else{
+        $dispo = '<span class="dis">DISPONÍVEL</span>';
+
+    }
 
         $results = '
         <div id="all">
             <div class="image-furniture">
                 <img src="data:'.$furniture->m_typeImg.';base64,'.base64_encode($furniture->m_imagem).'"">
-                <p><span>DISPONÍVEL</span> '.$furniture->m_qtdEstoque.' em estoque</p>
+                <p>'.$dispo.' '.$furniture->m_qtdEstoque.' em estoque</p>
                 <p class="heart"><img src="../../public/images/heart.svg" alt="coração"></p>
             </div>
             <div class="furniture-informations">
-                <h1>'.$furniture->m_titulo.'</h1>
+                <h1>'.utf8_encode($furniture->m_titulo).'</h1>
                 <br><br><br>
                 <p class="title">INFORMAÇÕES:</p><br>
                 <p>
-                   '.$furniture->m_desc.'
+                   '.utf8_encode($furniture->m_desc).'
                 </p><br><br><br>
-                <p>DESIGNERS: <a href="#">'.$furniture->m_designers.'</a></p><br>
-                <p>CATEGORIAS: <a href="#">'.$furniture->m_categoria.'</a></p><br><br><br>
+                <p>DESIGNERS: <a href="viewDesigners.php?id='.$furniture->d_id.'">'.utf8_encode($furniture->m_designers).'</a></p><br>
+                <p>CATEGORIAS: <a href="#">'.utf8_encode($furniture->m_categoria).'</a></p><br><br><br>
                 <ul>
                     <li>Cadeira Saarinem Base fixa</li>
                     <li>Cadeira Saarinem Base fixa</li>
@@ -50,9 +59,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?=strtoupper($furniture->m_titulo)?></title>
+    <title><?=strtoupper(utf8_encode($furniture->m_titulo))?></title>
     <link href="" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="../../public/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/view-moveis.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/header.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">

@@ -1,5 +1,49 @@
+<?php
+    require __DIR__.'../../../vendor/autoload.php';
+    use \App\Controller\Entity\Designer;
+    use \App\Controller\Entity\Movel;
+
+    if(!isset($_GET['id']) or !is_numeric($_GET['id'])){
+        header('location: designers.php?status=error');
+        exit;
+    }
+
+    $results = '';
+    $resultMoveis = '';
+    $designer = Designer::getDesigner($_GET['id']);
+    
+        $results = '
+        <div class="designer">
+            <div class="image"><img src="data:'.$designer->d_typeImg.';base64,'.base64_encode($designer->d_imagem).'"></div>
+            <div>
+                <h1>'.utf8_encode(strtoupper($designer->d_nome)).'</h1><br>
+                <P>
+                '.utf8_encode($designer->d_bio).'
+                </P><br><br><br>
+                <p>MÓVEIS DISPONÍVEIS:10</p>
+                <p>CATEGORIAS: <a href="#">Ambiente</a>, <a href="#">Mesa Alta</a>, <a href="#">Mesa Lateral</a></p>
+
+            </div>
+        </div>
+        ';
+    $furniture = Movel::getMovelByDesigner($designer->d_id);
+
+    $resultMoveis = '
+    <fieldset>
+            <article onclick="window.location.href = `viewMoveis.php?id='.$furniture->m_id.'`">
+                <div class="sample-furniture">
+                    <div style="background-image: url(data:'.$furniture->m_typeImg.';base64,'.base64_encode($furniture->m_imagem).');"></div>
+                    <p><strong>'.$furniture->m_titulo.'</strong></p>
+                    <h3>'.$furniture->m_categoria.'</h3>
+                </div>
+            </article>
+        </fieldset>
+    '
+
+
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -8,6 +52,7 @@
     <link rel="stylesheet" type="text/css" href="../../public/css/view-designer.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/header.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/furnitures.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -22,84 +67,15 @@
     <?php include 'includes/header.php'?>
         <button onClick="history.go(-1)"><img src="../../public/images/arrow.svg" alt="arrow"></button>
         <hr>
-        <div class="designer">
-            <div class="image">
-            <img src="../../public/images/eero.jpg">
-        </div>
-            <div>
-                <h1>EERO SAARINEN</h1><br>
-                <P>
-                    Foi um famoso arquiteto finlandês. Era filho do arquiteto finlandês Eliel Saarinen e emigrou para os
-                    Estados Unidos em 1923,estudou arquitetura na Universidade de Yale.
-                </P>
-                <p>Saarinen desenvolveu uma gama notável que dependia de cor, forma e materiais. Saarinen mostrou uma
-                    dependência acentuada em estruturas inovadoras e formas esculturais,
-                    mas não ao custo de considerações pragmáticas,utilizando um vocabulário de curvas e formas
-                    suspensas.
-                </P><br><br><br>
-                <p>MÓVEIS DISPONÍVEIS:10</p>
-                <p>CATEGORIAS: <a href="#">Ambiente</a>, <a href="#">Mesa Alta</a>, <a href="#">Mesa Lateral</a></p>
-
-            </div>
-        </div>
+            <?=$results?>
         <hr>
-<div class="designer-furnitures">
-    <div class="inline">
-        <div class="projetos">
-            <div style="background-image: url(../../public/images/cadeira2.jpg);"></div>
-            <p><strong>Ambiente - Poltrona Swift</strong></p>
-            <h3>CADEIRA</h3>
+<section>
+    <div class="furnitures-container">
+        <div>
+        <?=$resultMoveis?>
         </div>
     </div>
-    <div class="inline">
-        <div class="projetos">
-            <div style="background-image: url(../../public/images/cadeira2.jpg);"></div>
-            <p><strong>Ambiente - Poltrona Swift</strong></p>
-            <h3>CADEIRA</h3>
-        </div>
-    </div>
-    <div class="inline">
-        <div class="projetos">
-            <div style="background-image: url(../../public/images/cadeira2.jpg);"></div>
-            <p><strong>Ambiente - Poltrona Swift</strong></p>
-            <h3>CADEIRA</h3>
-        </div>
-    </div>
-    <div class="inline">
-        <div class="projetos">
-            <div style="background-image: url(../../public/images/cadeira2.jpg);"></div>
-            <p><strong>Ambiente - Poltrona Swift</strong></p>
-            <h3>CADEIRA</h3>
-        </div>
-    </div>
-    <div class="inline">
-        <div class="projetos">
-            <div style="background-image: url(../../public/images/cadeira2.jpg);"></div>
-            <p><strong>Ambiente - Poltrona Swift</strong></p>
-            <h3>CADEIRA</h3>
-        </div>
-    </div>
-    <div class="inline">
-        <div class="projetos">
-            <div style="background-image: url(../../public/images/cadeira2.jpg);"></div>
-            <p><strong>Ambiente - Poltrona Swift</strong></p>
-            <h3>CADEIRA</h3>
-        </div>
-    </div>
-    <div class="inline">
-        <div class="projetos">
-            <div style="background-image: url(../../public/images/cadeira2.jpg);"></div>
-            <p><strong>Ambiente - Poltrona Swift</strong></p>
-            <h3>CADEIRA</h3>
-        </div>
-    </div>
-    <div class="inline">
-        <div class="projetos">
-            <div style="background-image: url(../../public/images/cadeira2.jpg);"></div>
-            <p><strong>Ambiente - Poltrona Swift</strong></p>
-            <h3>CADEIRA</h3>
-        </div>
-    </div>
-</div>
+
+</section>
 <?php include 'includes/footer.php'?>
 </body>

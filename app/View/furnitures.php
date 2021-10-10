@@ -13,8 +13,8 @@ foreach ($furnitures as $furniture) {
             <article onclick="window.location.href = `viewMoveis.php?id=' . $furniture->m_id . '`">
                 <div class="sample-furniture">
                     <div style="background-image: url(data:' . $furniture->m_typeImg . ';base64,' . base64_encode($furniture->m_imagem) . '); "></div>
-                    <p><strong>' . $furniture->m_titulo . '</strong></p>
-                    <h3>' . strtoupper($furniture->m_categoria) . '</h3>
+                    <p><strong>' .utf8_encode($furniture->m_titulo) . '</strong></p>
+                    <h3>' . strtoupper(utf8_encode($furniture->m_categoria)) . '</h3>
                 </div>
             </article>
         </fieldset>
