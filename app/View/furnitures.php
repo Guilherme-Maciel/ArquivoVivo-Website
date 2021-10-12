@@ -5,7 +5,16 @@ use App\Controller\Entity\Movel;
 
 
 $results = '';
-$furnitures = Movel::getMoveis();
+
+if(!isset($_GET['filter'])){
+    $furnitures = Movel::getMoveis('m_qtdEstoque > 0 and moveis.ct_id = categoria.ct_id');
+}else{
+    $filter = $_GET['filter'];
+    $furnitures = Movel::getMoveis('m_qtdEstoque > 0 and moveis.ct_id = categoria.ct_id and moveis.ct_id = "'.$filter.'"');
+}
+
+
+
 
 foreach ($furnitures as $furniture) {
     $results .= '
@@ -14,7 +23,7 @@ foreach ($furnitures as $furniture) {
                 <div class="sample-furniture">
                     <div style="background-image: url(data:' . $furniture->m_typeImg . ';base64,' . base64_encode($furniture->m_imagem) . '); "></div>
                     <p><strong>' .utf8_encode($furniture->m_titulo) . '</strong></p>
-                    <h3>' . strtoupper(utf8_encode($furniture->m_categoria)) . '</h3>
+                    <h3>' . strtoupper(utf8_encode($furniture->ct_nome)) . '</h3>
                 </div>
             </article>
         </fieldset>
@@ -49,19 +58,19 @@ foreach ($furnitures as $furniture) {
                 <input type="text" placeholder="Pesquisar...">
             </div>
             <div class="filter-container">
-                <a href="">TODOS    </a>
-                <a href="">AMBIENTES    </a>
-                <a href="">APARADOR    </a>
-                <a href="">CADEIRAS    </a>
-                <a href="">CREDENZA    </a>
-                <a href="">ESCRIVANINHA    </a>
-                <a href="">ESTANTE    </a>
-                <a href="">MESA LATERAL    </a>
-                <a href="">MESA ALTA    </a>
-                <a href="">MESA DE CENTRO    </a>
-                <a href="">OBJETOS    </a>
-                <a href="">POLTRONAS    </a>
-                <a href="">SOFÁS    </a>
+                <a href="furnitures.php">TODOS    </a>
+                <a href="furnitures.php?filter=2">AMBIENTES    </a>
+                <a href="furnitures.php?filter=3">APARADOR    </a>
+                <a href="furnitures.php?filter=4">CADEIRAS    </a>
+                <a href="furnitures.php?filter=5">CREDENZA    </a>
+                <a href="furnitures.php?filter=6">ESCRIVANINHA    </a>
+                <a href="furnitures.php?filter=7">ESTANTE    </a>
+                <a href="furnitures.php?filter=8">MESA LATERAL    </a>
+                <a href="furnitures.php?filter=9">MESA ALTA    </a>
+                <a href="furnitures.php?filter=10">MESA DE CENTRO    </a>
+                <a href="furnitures.php?filter=11">OBJETOS    </a>
+                <a href="furnitures.php?filter=12">POLTRONAS    </a>
+                <a href="furnitures.php?filter=13">SOFÁS    </a>
             </div>
         </main><br><br>
         <section>

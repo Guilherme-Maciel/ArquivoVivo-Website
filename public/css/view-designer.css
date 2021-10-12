@@ -37,10 +37,11 @@ body{
     margin-bottom: 2rem;
 
 }
-#container .designer h1{
-    text-align: center;
+#container .designer .dname{
+    text-align: left;
     margin-top:0.1rem;
     margin-bottom: 1.0rem;
+    margin-left: 0;
     font-family: Raleway, 'Sans Serif';
 
 

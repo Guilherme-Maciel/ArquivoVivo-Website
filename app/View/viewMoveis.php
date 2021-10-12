@@ -34,7 +34,7 @@
                    '.utf8_encode($furniture->m_desc).'
                 </p><br><br><br>
                 <p>DESIGNERS: <a href="viewDesigners.php?id='.$furniture->d_id.'">'.utf8_encode($furniture->m_designers).'</a></p><br>
-                <p>CATEGORIAS: <a href="#">'.utf8_encode($furniture->m_categoria).'</a></p><br><br><br>
+                <p>CATEGORIAS: <a href="furnitures.php?filter='.$furniture->ct_id.'">'.utf8_encode($furniture->ct_nome).'</a></p><br><br><br>
                 <ul>
                     <li>Cadeira Saarinem Base fixa</li>
                     <li>Cadeira Saarinem Base fixa</li>
@@ -43,9 +43,11 @@
                 </ul><br><br><br>
                 <p class="title">FAÇA NEGÓCIO:</p><br><br>
                 <div class="buttons">
+                <a href="https://wa.me/5511942104521?text=Olá%20!!%20Me%20Interressei%20pelo(a)%20'.$furniture->m_titulo.'%20de%20ID:%20'.$furniture->m_id.'.%20Podemos%20fazer%20contato?:)" target="_blank">
                     <button class="whatsapp">WhatsApp <img src="../../public/images/whatsapp.svg"
-                            alt="whatsapp"></button>
-                    <button class="gmail">Gmail <img src="../../public/images/gmail.svg" alt="gmail"></button>
+                            alt="whatsapp"></button></a>
+                <a href="mailto:guilherme5932.ms@gmail.com?subject=CONTATO%20VIA%20SITE%20-%20NEGÓCIO:&body=Olá%20!!%20Me%20Interressei%20pelo(a)%20'.$furniture->m_titulo.'%20de%20ID:%20'.$furniture->m_id.'.%20Podemos%20fazer%20contato?:)" target="_blank">
+                    <button class="gmail">Gmail <img src="../../public/images/gmail.svg" alt="gmail"></button></a>
                 </div>
             </div>
         </div> 

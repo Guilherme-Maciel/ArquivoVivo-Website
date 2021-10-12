@@ -16,15 +16,10 @@
         <div class="designer">
             <div class="image"><img src="data:'.$designer->d_typeImg.';base64,'.base64_encode($designer->d_imagem).'"></div>
             <div>
-                <h1>'.utf8_encode(strtoupper($designer->d_nome)).'</h1><br>
+                <h1 class="dname">'.utf8_encode(strtoupper($designer->d_nome)).'</h1><br>
                 <P>
                 '.utf8_encode($designer->d_bio).'
                 </P><br><br><br>
-                <p>MÓVEIS DISPONÍVEIS:10</p>
-                <p>CATEGORIAS: <a href="#">Ambiente</a>, <a href="#">Mesa Alta</a>, <a href="#">Mesa Lateral</a></p>
-
-            </div>
-        </div>
         ';
     $furniture = Movel::getMovelByDesigner($designer->d_id);
 
@@ -34,12 +29,20 @@
                 <div class="sample-furniture">
                     <div style="background-image: url(data:'.$furniture->m_typeImg.';base64,'.base64_encode($furniture->m_imagem).');"></div>
                     <p><strong>'.$furniture->m_titulo.'</strong></p>
-                    <h3>'.$furniture->m_categoria.'</h3>
+                    <h3>'.$furniture->ct_nome.'</h3>
                 </div>
             </article>
         </fieldset>
-    '
+    ';
 
+    $resultsCat = '';
+
+    $designerCat = Designer::getDesignerByCategoria($_GET['id']);
+
+    foreach ($designerCat as $cat){
+        $resultsCat .= '<a href=furnitures.php?filter='.$cat->ct_id.'>|'.$cat->ct_nome.'|<a>
+        ';
+    }
 
 ?>
 <!DOCTYPE html>
@@ -68,6 +71,10 @@
         <button onClick="history.go(-1)"><img src="../../public/images/arrow.svg" alt="arrow"></button>
         <hr>
             <?=$results?>
+            <p>MÓVEIS DISPONÍVEIS:10</p>
+                <p>CATEGORIAS: <?=$resultsCat?></p>
+            </div>
+        </div>
         <hr>
 <section>
     <div class="furnitures-container">
