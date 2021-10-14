@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="../../public/css/footer.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/contato.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/animations.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/scroll.css">
 
     <link
         href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,100&display=swap"

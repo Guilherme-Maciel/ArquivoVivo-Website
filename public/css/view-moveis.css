@@ -87,6 +87,9 @@ body{
 	font-size: 1.8rem;
 	line-height: 1.5;
 }
+#container .furniture-informations ul li a{
+	color: #07A592;
+}
 #container .furniture-informations .buttons{
 	display: flex;
 	flex-direction: column;
