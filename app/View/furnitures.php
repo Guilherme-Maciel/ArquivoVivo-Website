@@ -14,10 +14,6 @@ if(!isset($_GET['filter'])){
     $obPagination = new Pagination($qtd, $_GET['page'] ?? 1, 2);
 
     $furnitures = Movel::getMoveis($where);
-
-    echo "<pre>";
-    print_r($obPagination->getLimit());
-    echo "</pre>"; exit;
 }
 else{
     $filter = $_GET['filter'];
@@ -28,7 +24,7 @@ else{
 
     $obPagination = new Pagination($qtd, $_GET['page'] ?? 1, 10);
 
-    $furnitures = Movel::getMoveis($where);
+    $furnitures = Movel::getMoveis($where, null, $obPagination->getLimit());
 }
 
 foreach ($furnitures as $furniture) {
