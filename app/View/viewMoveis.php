@@ -124,7 +124,7 @@
 <body>
     <div id="container">
     <?php include 'includes/header.php'?>
-        <button id="back" onClick="history.go(-1)"><img src="../../public/images/arrow.svg" alt="arrow"></button>
+        <button id="back" onClick="history.go(-1)"><img src="../../public/images/arrow.png" alt="arrow"></button>
         <hr>
         <?=$results?>
         <?=$designers?>

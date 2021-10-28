@@ -19,6 +19,7 @@ body{
     margin: 2.0rem 0rem 2rem 5rem;
     border: none;
     font-family: Raleway, 'Sans Serif';
+    background: none;
 }
 #container hr{
     background-color:var(--color-black);

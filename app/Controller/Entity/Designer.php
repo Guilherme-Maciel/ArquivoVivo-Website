@@ -24,7 +24,7 @@ class Designer{
         ->fetchObject(self::class);
     }
     public static function getDesignerByCategoria($id){
-        return (new Database('designers, moveis, categoria'))->select('designers.d_id = '.$id.' and designers.d_id = moveis.d_id and moveis.ct_id = categoria.ct_id ')
+        return (new Database('designers, moveis, categoria'))->select('designers.d_id = '.$id.' and designers.d_id = moveis.d_id and moveis.ct_id = categoria.ct_id GROUP BY categoria.ct_id, categoria.ct_nome', null, null, 'categoria.ct_id, categoria.ct_nome')
         ->fetchAll(PDO::FETCH_CLASS,self::class);
     }
 

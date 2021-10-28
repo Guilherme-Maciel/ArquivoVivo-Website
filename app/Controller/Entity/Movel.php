@@ -24,6 +24,12 @@ class Movel{
         return (new Database('moveis, categoria'))->select($where,$order,$limit)
         ->fetchAll(PDO::FETCH_CLASS,self::class);
     }
+
+    public static function getQtdMoveis($where = null){
+        return (new Database('moveis, categoria'))->select($where, null, null, 'COUNT(*) as qtd')
+        ->fetchObject()->qtd;
+    }
+
     public static function getMovel($id){
         return (new Database('moveis, categoria'))->select('m_id = '.$id.' and moveis.ct_id = categoria.ct_id')
         ->fetchObject(self::class);

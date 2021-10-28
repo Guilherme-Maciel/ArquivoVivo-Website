@@ -21,19 +21,23 @@
                 '.utf8_encode($designer->d_bio).'
                 </P><br><br><br>
         ';
-    $furniture = Movel::getMovelByDesigner($designer->d_id);
+    $furnitures = Movel::getMoveis('d_id = '.$designer->d_id.' and moveis.ct_id = categoria.ct_id');
 
-    $resultMoveis = '
-    <fieldset>
-            <article onclick="window.location.href = `viewMoveis.php?id='.$furniture->m_id.'`">
-                <div class="sample-furniture">
-                    <div style="background-image: url(data:'.$furniture->m_typeImg.';base64,'.base64_encode($furniture->m_imagem).');"></div>
-                    <p><strong>'.$furniture->m_titulo.'</strong></p>
-                    <h3>'.$furniture->ct_nome.'</h3>
-                </div>
-            </article>
-        </fieldset>
-    ';
+    foreach ($furnitures as $furniture){
+        $resultMoveis .= '
+            <fieldset>
+                    <article onclick="window.location.href = `viewMoveis.php?id='.$furniture->m_id.'`">
+                        <div class="sample-furniture">
+                            <div style="background-image: url(data:'.$furniture->m_typeImg.';base64,'.base64_encode($furniture->m_imagem).');"></div>
+                            <p><strong>'.$furniture->m_titulo.'</strong></p>
+                            <h3>'.$furniture->ct_nome.'</h3>
+                        </div>
+                    </article>
+                </fieldset>
+            ';
+    }
+
+    
 
     $resultsCat = '';
 
@@ -70,7 +74,7 @@
 <body>
     <div id="container">
     <?php include 'includes/header.php'?>
-        <button onClick="history.go(-1)"><img src="../../public/images/arrow.svg" alt="arrow"></button>
+        <button onClick="history.go(-1)"><img src="../../public/images/arrow.png" alt="arrow"></button>
         <hr>
             <?=$results?>
             <p>MÓVEIS DISPONÍVEIS:10</p>

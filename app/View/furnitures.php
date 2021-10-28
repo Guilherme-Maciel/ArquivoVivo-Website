@@ -2,19 +2,34 @@
 require __DIR__ . '../../../vendor/autoload.php';
 
 use App\Controller\Entity\Movel;
-
+use App\Lib\Db\Pagination;
 
 $results = '';
 
 if(!isset($_GET['filter'])){
-    $furnitures = Movel::getMoveis('m_qtdEstoque > 0 and moveis.ct_id = categoria.ct_id');
-}else{
-    $filter = $_GET['filter'];
-    $furnitures = Movel::getMoveis('m_qtdEstoque > 0 and moveis.ct_id = categoria.ct_id and moveis.ct_id = "'.$filter.'"');
+    $where = 'm_qtdEstoque > 0 and moveis.ct_id = categoria.ct_id';
+
+    $qtd = Movel::getQtdMoveis($where);
+
+    $obPagination = new Pagination($qtd, $_GET['page'] ?? 1, 2);
+
+    $furnitures = Movel::getMoveis($where);
+
+    echo "<pre>";
+    print_r($obPagination->getLimit());
+    echo "</pre>"; exit;
 }
+else{
+    $filter = $_GET['filter'];
 
+    $where = 'm_qtdEstoque > 0 and moveis.ct_id = categoria.ct_id and moveis.ct_id = "'.$filter.'"';
 
+    $qtd = Movel::getQtdMoveis($where);
 
+    $obPagination = new Pagination($qtd, $_GET['page'] ?? 1, 10);
+
+    $furnitures = Movel::getMoveis($where);
+}
 
 foreach ($furnitures as $furniture) {
     $results .= '
@@ -84,22 +99,6 @@ foreach ($furnitures as $furniture) {
             <nav>
                 <li>
                     <div><a href="">&#9664;</a></div>
-                </li>
-                <li>
-                    <div><a href="">1</a></div>
-                </li>
-                <li>
-                    <div><a href="">2</a></div>
-                </li>
-                <li>
-                    <div><a href="">3</a></div>
-                </li>
-                <li>
-                    <div><a href="">4</a></div>
-                </li>
-                <li>
-                    <div><a href="">5</a></div>
-                </li>
                 <li>
                     <div><a href="">&#9654;</a></div>
                 </li>

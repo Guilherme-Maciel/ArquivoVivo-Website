@@ -18,6 +18,7 @@ body{
 #container #back{
 	margin: 2.0rem 0rem 2rem 1.5rem;
 	border: none;
+	background: none;
 }
 #container hr:nth-child(3){
 	background-color: black;
@@ -134,6 +135,7 @@ body{
 	#container #back{
 		margin: 2.0rem 0rem 2rem 5rem;
         border: none;
+		background: none;
 	}
 	#container hr:nth-child(3){
 		background-color: black;
