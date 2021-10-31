@@ -29,27 +29,42 @@ body{
     margin: 0 1.5rem;
 
 }
+
+#container .search-container form{
+    display: flex;
+    align-items: center;
+}
+
 #container .search-container{
     background: white;
     border-radius: 18px;
     display: flex;
     align-items: center;
-    border: black 1px solid;
+    justify-self: center;
+    border: #000000 1px solid;
     margin-top: 1.5rem;
     margin-right: 1.5rem;
     margin-left: 1.5rem;
     
 }
+#container .search-container form button{
+    background: none;
+    height: 5.835rem;
+    border-radius: 18px 0 0 18px;
+   
+}
 
-#container .search-container img{
+#container .search-container form button img{
     width: 42px;
 }
-#container .search-container input{
+#container .search-container form input{
     height: 32px;
     width: 80%;
     border: none;
     font-size: 18px;
     font-family: Raleway, "Sans Serif";
+    margin-left: 0.2rem;
+  
 }
 #container .search-container input:focus{
     outline: 0;
@@ -67,6 +82,9 @@ body{
     color: #171717;
     font-family: Raleway, 'Sans Serif';
     font-size: 1.5rem;
+}
+#container .filter-container a.selected-filter{
+    font-weight: 1000;
 }
 
 #container section .furnitures-container{
@@ -122,42 +140,6 @@ body{
     overflow: hidden;
 
 }
-
-#container .selection-furnitures  nav{
- display: flex;
- justify-content: center;
-}
-#container .selection-furnitures  li{
-    list-style: none;
-    text-align: center;
-    margin-top: 30px;
-    display:center;
-}
-
-#container .selection-furnitures  li  div{
-
-    background-color:var(--color-white);
-    border-radius:50%;
-    height:3.0rem;
-    width:3.0rem;
-    display:flex;
-    justify-content: center;
-    align-items: center ;
-    margin-right:1.5rem;
-    
-}
-
-#container .selection-furnitures  li  a{
-    text-decoration: none;
-    color:var(--color-black);
-    font-size: 2.0rem;
-    font-family: Raleway, "Sans Serif";
-    margin: 1.5rem;
-    font-weight: bolder;
-}
-
-
-
 
 @media (min-width:1080px){
     #container h1{

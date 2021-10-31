@@ -1,0 +1,48 @@
+#container .selection-furnitures  nav{
+    display: flex;
+    justify-content: center;
+   }
+   #container .selection-furnitures  li{
+       list-style: none;
+       text-align: center;
+       margin-top: 30px;
+       display:center;
+   }
+   
+   #container .selection-furnitures nav li .btn{
+       border-radius:50%;
+       height:3.0rem;
+       width:3.0rem;
+       display:flex;
+       justify-content: center;
+       align-items: center ;
+       margin-right:1.5rem;
+       transition: transform .2s;
+   }
+   
+   #container .selection-furnitures nav li .btn:hover{
+       transform: scale(1.1);
+   }
+   
+   #container .selection-furnitures nav li .btn-white{
+       background-color:var(--color-white);
+   }
+   
+   #container .selection-furnitures nav li .btn-dark-white{
+       background-color:var(--color-black);
+   }
+   
+   #container .selection-furnitures nav li .btn-dark-white a{
+       color: #FFFFFF;
+   }
+   
+   #container .selection-furnitures  li  a{
+       text-decoration: none;
+       color:var(--color-black);
+       font-size: 2.0rem;
+       font-family: Raleway, "Sans Serif";
+       margin: 1.5rem;
+       font-weight: bolder;
+   }
+   
+   

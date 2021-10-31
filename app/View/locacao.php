@@ -21,7 +21,7 @@
 <body>
     <div id="container">
     <?php include 'includes/header.php'?>
-        <img class="img" src="../../public/images/banner-reforma.svg">
+    <div class="img" style="background-image: url(../../public/images/locacao-banner.jpg)"></div>
         <br>
         <h1>LOCAÇÃO</h1>
         <br>

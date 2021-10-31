@@ -39,5 +39,11 @@ class Movel{
         ->fetchObject(self::class);
     }
 
+    public static function getQtdMovelByDesigner($id){
+        return (new Database('moveis, categoria'))->select('d_id = '.$id.' and moveis.ct_id = categoria.ct_id', null, null, 'COUNT(*) as qtd')
+        ->fetchObject()->qtd;
+    }
+
+
 
 }

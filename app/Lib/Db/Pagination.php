@@ -37,6 +37,22 @@ class Pagination{
     public function getLimit(){
         $offset = ($this->limit * ($this->currentPage - 1)); 
         return $offset.','.$this->limit;
-        
+    }
+
+    //Responsável pelo retorno de opções de páginas
+    public function getPages(){
+        //NO return
+        if($this->pages == 1) return[];
+
+        //páginas
+        $paginas = [];
+        for($i = 1; $i <= $this->pages; $i++){
+            $paginas[] = [
+                'pagina' => $i,
+                'atual' => $i == $this->currentPage
+            ];
+        }
+
+        return $paginas;
     }
 }

@@ -71,6 +71,9 @@ body{
     border-radius: 2rem;
     align-self: center;
 }
+#container section .designer .information-designer{
+    width: 100%;
+}
 #container section .designer .information-designer .title{
     text-align: center;
     font-size: 1.3rem;
@@ -96,38 +99,6 @@ body{
     font-weight: 700;
     margin-top: 1rem;
 }
-#container section .selection-furnitures  nav{
-    display: flex;
-    justify-content: center;
-   }
-   #container section .selection-furnitures  li{
-       list-style: none;
-       text-align: center;
-       margin-top: 30px;
-       display:center;
-   }
-   
-   #container section .selection-furnitures  li  div{
-   
-       background-color:var(--color-white);
-       border-radius:50%;
-       height:3.0rem;
-       width:3.0rem;
-       display:flex;
-       justify-content: center;
-       align-items: center ;
-       margin-right:1.5rem;
-       
-   }
-   
-   #container section .selection-furnitures  li  a{
-       text-decoration: none;
-       color:var(--color-black);
-       font-size: 2.0rem;
-       font-family: Raleway, "Sans Serif";
-       margin: 1.5rem;
-       font-weight: bolder;
-   }
    
 @media (min-width: 1080px){
     #container section .designer{

@@ -17,7 +17,9 @@ body{
     background-color: var(--color-silver);
 }
 #container  .img {
-    width:100%;
+    height: 33.9rem;
+    background-size: cover;
+    background-position-y: center;
 }
 
 #container  h1 {
