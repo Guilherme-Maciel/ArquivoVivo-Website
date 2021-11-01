@@ -1,5 +1,14 @@
 <?php
-
+/**
+ * Classe responsável por exercer controle sobre a entidade Moveis
+ * 
+ * getMoveis() -> listagem de dados dos Moveis pelos parâmetros WHERE, ORDER e LIMIT
+ * getMovel() -> listagem única por ID da entidade Moveis
+ * getQtdMoveis() -> retorna o número total de dados obtidos
+ * getMovelByDesigner() -> retorna os dados de móveis pertencentes a certo Designer pelo parâmetro ID
+ * getQtdMovelByDesigner() -> retorna a quantidade de móveis pertencentes a certo Designer pelo parâmetro ID
+ * 
+ */
 
 namespace App\Controller\Entity;
 
@@ -7,6 +16,7 @@ use PDO;
 use \App\Lib\Db\Database;
 
 class Movel{
+    //Variáveis de atribuição dos valores retornados do banco
     public $m_id;
     public $m_titulo;
     public $m_desc;
@@ -43,7 +53,5 @@ class Movel{
         return (new Database('moveis, categoria'))->select('d_id = '.$id.' and moveis.ct_id = categoria.ct_id', null, null, 'COUNT(*) as qtd')
         ->fetchObject()->qtd;
     }
-
-
 
 }

@@ -1,12 +1,16 @@
 ﻿<?php
+    //Carregamento das classes
     require __DIR__.'../../../vendor/autoload.php';
+
     use \App\Controller\Entity\Movel;
 
+    //validação do ID recebido por GET
     if(!isset($_GET['id']) or !is_numeric($_GET['id'])){
         header('location: furnitures.php?status=error');
         exit;
     }
 
+    //Variáveis de construção HTML
     $results = '';
     $resultAssoc = '';
     $dispo = '';
@@ -16,7 +20,7 @@
 
     $furniture = Movel::getMovel($_GET['id']);
     
-
+    //Construção e disponibilidade de acordo com o atributo m_qtdEstoque
     if($furniture->m_qtdEstoque <= 0){
         $dispo = '<span class="indis">INDISPONÍVEL</span>';
     }else{
@@ -24,6 +28,7 @@
 
     }
 
+    //Construção da estrutura HTML do Móvel (caso seja de AMBIENTES ou não)
     if($furniture->ct_id == 2){
         //Se a categoria da leitura for AMBIENTES, os IDs serão atribuidos à variável assoc
         $assoc = $furniture->m_assoc;
@@ -39,33 +44,33 @@
         }
 
         $results = '
-        <div id="all">
-            <div class="image-furniture">
-                <img src="data:'.$furniture->m_typeImg.';base64,'.base64_encode($furniture->m_imagem).'"">
-                <p>'.$dispo.' '.$furniture->m_qtdEstoque.' em estoque</p>
-                <p class="heart"><img src="../../public/images/heart.svg" alt="coração"></p>
-            </div>
-            <div class="furniture-informations">
-                <h1>'.utf8_encode($furniture->m_titulo).'</h1>
-                <br><br><br>
-                <p class="title">INFORMAÇÕES:</p><br>
-                <p>
-                   '.utf8_encode($furniture->m_desc).'
-                </p><br><br><br><p>DESIGNERS:';
-
-                $categoria = '</p><br><p>CATEGORIA: <a href="furnitures.php?filter='.$furniture->ct_id.'">'.utf8_encode($furniture->ct_nome).'</a></p><br><br><br><ul>';
-
-                $business = '</ul><br><br><br>
-                <p class="title">FAÇA NEGÓCIO:</p><br><br>
-                <div class="buttons">
-                <a href="https://wa.me/5511942104521?text=Olá%20!!%20Me%20Interressei%20pelo(a)%20'.$furniture->m_titulo.'%20de%20ID:%20'.$furniture->m_id.'.%20Podemos%20fazer%20contato?:)" target="_blank">
-                    <button class="whatsapp">WhatsApp <img src="../../public/images/whatsapp.svg"
-                            alt="whatsapp"></button></a>
-                <a href="mailto:guilherme5932.ms@gmail.com?subject=CONTATO%20VIA%20SITE%20-%20NEGÓCIO:&body=Olá%20!!%20Me%20Interressei%20pelo(a)%20'.$furniture->m_titulo.'%20de%20ID:%20'.$furniture->m_id.'.%20Podemos%20fazer%20contato?:)" target="_blank">
-                    <button class="gmail">Gmail <img src="../../public/images/gmail.svg" alt="gmail"></button></a>
+            <div id="all">
+                <div class="image-furniture">
+                    <img src="data:'.$furniture->m_typeImg.';base64,'.base64_encode($furniture->m_imagem).'"">
+                    <p>'.$dispo.' '.$furniture->m_qtdEstoque.' em estoque</p>
+                    <p class="heart"><img src="../../public/images/heart.svg" alt="coração"></p>
                 </div>
-            </div>
-        </div> 
+                <div class="furniture-informations">
+                    <h1>'.utf8_encode($furniture->m_titulo).'</h1>
+                    <br><br><br>
+                    <p class="title">INFORMAÇÕES:</p><br>
+                    <p>
+                    '.utf8_encode($furniture->m_desc).'
+                    </p><br><br><br><p>DESIGNERS:';
+
+                    $categoria = '</p><br><p>CATEGORIA: <a href="furnitures.php?filter='.$furniture->ct_id.'">'.utf8_encode($furniture->ct_nome).'</a></p><br><br><br><ul>';
+
+                    $business = '</ul><br><br><br>
+                    <p class="title">FAÇA NEGÓCIO:</p><br><br>
+                    <div class="buttons">
+                    <a href="https://wa.me/5511942104521?text=Olá%20!!%20Me%20Interressei%20pelo(a)%20'.$furniture->m_titulo.'%20de%20ID:%20'.$furniture->m_id.'.%20Podemos%20fazer%20contato?:)" target="_blank">
+                        <button class="whatsapp">WhatsApp <img src="../../public/images/whatsapp.svg"
+                                alt="whatsapp"></button></a>
+                    <a href="mailto:guilherme5932.ms@gmail.com?subject=CONTATO%20VIA%20SITE%20-%20NEGÓCIO:&body=Olá%20!!%20Me%20Interressei%20pelo(a)%20'.$furniture->m_titulo.'%20de%20ID:%20'.$furniture->m_id.'.%20Podemos%20fazer%20contato?:)" target="_blank">
+                        <button class="gmail">Gmail <img src="../../public/images/gmail.svg" alt="gmail"></button></a>
+                    </div>
+                </div>
+            </div> 
         ';
     }else{
         $results = '

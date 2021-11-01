@@ -22,7 +22,7 @@
 <body>
     <div id="container">
     <?php include 'includes/header.php'?>
-        <img class="img" src="../../public/images/banner-reforma.svg">
+        <img class="img animate-fadein" src="../../public/images/banner-reforma.svg">
         <br>
         <h1>REFORMA</h1>
         <br>

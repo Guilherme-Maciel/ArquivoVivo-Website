@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="../../public/css/header.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/footer.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/scroll.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/animations.css">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -21,12 +23,12 @@
 <body>
     <div id="container">
     <?php include 'includes/header.php'?>
-    <div class="img" style="background-image: url(../../public/images/locacao-banner.jpg)"></div>
+    <div class="img animate-fadein" style="background-image: url(../../public/images/locacao-banner.jpg)"></div>
         <br>
         <h1>LOCAÇÃO</h1>
         <br>
         <hr>
-        <div class="batata">
+        <div class="batata animate-up">
             <div class="reforma-info">
                 <h2>SERVIÇO DE LOCAÇÃO</h2>
                 <p>

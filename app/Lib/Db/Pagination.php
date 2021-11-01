@@ -1,4 +1,12 @@
 <?php
+/**
+ * Classe responsável por retornar o limite de consultas por página
+ * 
+ * __construct() -> atribui a quantidade de consultas, a página atual e o limite total - $results, $currentPage, $limit.
+ * calculate() -> método responsável por calcular o total de páginas de acordo com o $results
+ * getLimit() -> retorna os parametrôs para o "LIMIT início, final" 
+ * getPages() -> listagem do número total de páginas
+ */
 
 namespace App\Lib\Db;
 
@@ -15,7 +23,7 @@ class Pagination{
     //page atual
     private $currentPage;
 
-    public function __construct($results,$currentPage = 1,$limit = 10)
+    public function __construct($results,$currentPage = 1,$limit = 20)
     {
         $this->results = $results;
         $this->limit = $limit;

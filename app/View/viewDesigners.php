@@ -1,28 +1,35 @@
 <?php
+    //Carregamento das classes
     require __DIR__.'../../../vendor/autoload.php';
+
     use \App\Controller\Entity\Designer;
     use \App\Controller\Entity\Movel;
 
+    //validação do ID recebido por GET
     if(!isset($_GET['id']) or !is_numeric($_GET['id'])){
         header('location: designers.php?status=error');
         exit;
     }
 
+    //Variáveis de construção HTML
     $results = '';
     $resultMoveis = '';
-    $designer = Designer::getDesigner($_GET['id']);
-    
-        $results = '
-        <div class="designer">
-            <div class="image"><img src="data:'.$designer->d_typeImg.';base64,'.base64_encode($designer->d_imagem).'"></div>
-            <div>
-                <h1 class="dname">'.utf8_encode(strtoupper($designer->d_nome)).'</h1><br>
-                <P>
-                '.utf8_encode($designer->d_bio).'
-                </P><br><br><br>
-        ';
-    $furnitures = Movel::getMoveis('d_id = '.$designer->d_id.' and moveis.ct_id = categoria.ct_id');
+    $resultsCat = '';
 
+    $designer = Designer::getDesigner($_GET['id']);
+        //construção da estrutura HTML do designer
+        $results = '
+            <div class="designer">
+                <div class="image"><img src="data:'.$designer->d_typeImg.';base64,'.base64_encode($designer->d_imagem).'"></div>
+                <div>
+                    <h1 class="dname">'.utf8_encode(strtoupper($designer->d_nome)).'</h1><br>
+                    <P>
+                    '.utf8_encode($designer->d_bio).'
+                    </P><br><br><br>
+        ';
+
+    $furnitures = Movel::getMoveis('d_id = '.$designer->d_id.' and moveis.ct_id = categoria.ct_id');
+    //Construção da estrutura HTML dos móveis pertencentes ao designer
     foreach ($furnitures as $furniture){
         $resultMoveis .= '
             <fieldset>
@@ -37,15 +44,10 @@
             ';
     }
 
-    
-
-    $resultsCat = '';
-
     $designerCat = Designer::getDesignerByCategoria($_GET['id']);
-
+    //Construção da estrutura HTML para as categorias as quais o designer usufrui
     foreach ($designerCat as $cat){
-        $resultsCat .= '<a href=furnitures.php?filter='.$cat->ct_id.'>|'.$cat->ct_nome.'|<a>
-        ';
+        $resultsCat .= '<a href=furnitures.php?filter='.$cat->ct_id.'>|'.$cat->ct_nome.'|<a>';
     }
 
 ?>

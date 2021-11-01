@@ -30,45 +30,7 @@ body{
 
 }
 
-#container .search-container form{
-    display: flex;
-    align-items: center;
-}
 
-#container .search-container{
-    background: white;
-    border-radius: 18px;
-    display: flex;
-    align-items: center;
-    justify-self: center;
-    border: #000000 1px solid;
-    margin-top: 1.5rem;
-    margin-right: 1.5rem;
-    margin-left: 1.5rem;
-    
-}
-#container .search-container form button{
-    background: none;
-    height: 5.835rem;
-    border-radius: 18px 0 0 18px;
-   
-}
-
-#container .search-container form button img{
-    width: 42px;
-}
-#container .search-container form input{
-    height: 32px;
-    width: 80%;
-    border: none;
-    font-size: 18px;
-    font-family: Raleway, "Sans Serif";
-    margin-left: 0.2rem;
-  
-}
-#container .search-container input:focus{
-    outline: 0;
-}
 #container .filter-container{
     margin-top: 1.5rem;
     margin-right: 1.5rem;

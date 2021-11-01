@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * Classe responsável por exercer controle sobre a entidade Cliente 
+ * 
+ * __construct() -> atribuição das variáveis para cadastro no banco de dados
+ * register() -> cadastro das variáveis no banco de dados
+ */
 namespace App\Controller\Entity;
 
 use PDO;

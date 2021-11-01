@@ -1,10 +1,20 @@
 <?php
+/**
+ * Classe responsável por exercer controle sobre a entidade Designer
+ * 
+ * getDesigners() -> listagem de dados dos Designers pelos parâmetros WHERE, ORDER e LIMIT
+ * getDesigner() -> listagem única por ID da entidade Designers
+ * getQtdDesigners() -> retorna o número total de dados retornados
+ * getDesignerByCategoria() -> realiza a consulta das categorias encontradas em móveis registrados com certo
+ * ID da entidade esigners
+ * 
+ */
 
 
 namespace App\Controller\Entity;
 
 use PDO;
-use \App\Lib\Db\Database;
+use \App\Lib\Db\Database; //Métodos e querys Mysql
 
 class Designer{
     public $ct_id;

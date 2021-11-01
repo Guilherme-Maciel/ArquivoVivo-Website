@@ -1,4 +1,14 @@
 <?php
+/**
+ * Classe responsável pelo controle de querys para o banco de dados Mysql
+ * 
+ * __construct() -> recebe a ou as tabelas a serem empregadas e configura a conexão com o banco pelo método setConnection()
+ * setConnection() -> método responsável pela conexão com o banco de dados
+ * execute() -> método responsável pela execução das querys
+ * 
+ * insert() -> método responsável pela inserção de dados no banco
+ * select() -> método responsável pela consulta de dados no banco
+ */
 
 namespace App\Lib\Db;
 
@@ -6,6 +16,7 @@ use PDO;
 use PDOException;
 
 class Database{
+    //Variáveis para conexão ao banco de dados
     const HOST = 'localhost';
     const NAME = 'arquivovivomv';
     const USER = 'root';
@@ -27,7 +38,6 @@ class Database{
 
         }catch(PDOException $e){
             die('ERROR:'.$e->getMessage());
-
         }
     }
 
@@ -43,20 +53,24 @@ class Database{
     }
  
     public function insert($values){
+        //Remove dados vazios no array
+        $values = array_filter($values);
+        //atribui somente as keys do array $values à variável $fields
+        $fields = array_keys($values);
+        //Array recebe "?" para cada campo em $fields
+        $binds = array_pad([],count($fields),'?');
 
-       $values = array_filter($values);
-       $fields = array_keys($values);
-       $binds = array_pad([],count($fields),'?');
-
-       $query = "INSERT INTO ".$this->table." (".implode(',',$fields).") VALUES(".implode(',', $binds).")";
-
-       $this->execute($query,array_values($values));
-
-       return $this->connection->lastInsertId();
+        //elaboração da query INSERT
+        $query = "INSERT INTO ".$this->table." (".implode(',',$fields).") VALUES(".implode(',', $binds).")";
+        //Substituição dos binds "?" pelos valores do array $values e execução da query
+        $this->execute($query,array_values($values));
+        //Retorna o id cadastrado
+        return $this->connection->lastInsertId();
 
     }
 
      public function select($where = null, $order = null, $limit = null, $fields = '*'){
+        //parâmetros de consulta Mysql
         $where = strlen($where) ? 'WHERE '.$where : '';
         $order = strlen($order) ? 'ORDER BY '.$order : '';
         $limit = strlen($limit) ? 'LIMIT '.$limit : '';
@@ -64,7 +78,7 @@ class Database{
         //query
         $query = 'SELECT '.$fields.' FROM '.$this->table.' '.$where.' '.$order.' '.$limit;
 
-        //execução
+        //execução da query
         return $this->execute($query);
 
     }
