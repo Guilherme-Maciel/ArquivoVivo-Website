@@ -1,6 +1,56 @@
+<?php
+
+$buttons = '';
+$message = '';
+
+if(!isset($_SESSION)){
+    session_start();
+
+    $buttons = '
+    ';
+
+}
+
+if(!isset($_SESSION['login_session']) and  !isset($_SESSION['pass_session'])){
+    $buttons = '
+    <button style="opacity:<?=$opacity?>" class="btn-cadaster animate-up-buttons" onclick="window.location.href = `#cadasterModal`">cadastrar</button>
+    <button style="opacity:<?=$opacity?>" class="btn-login animate-up-buttons" onclick="window.location.href = `#loginModal`">login</button>';
+}
+
+
+if(isset($_GET['status'])){
+    switch ($_GET['status']) {
+        case 'error_session':
+            $message = '
+            <div id="errorSessionModal" class="modal">
+                <div class="confirm-div">
+                    <a href="#fechar" title="Fechar" class="fechar">x</a>
+                    <p><img src="../../public/images/exclamacao.png" alt="Arquivo Vivo"></p>
+                    <h1>ERRO DE SESSÃO!!!</h1>
+                    <p>Faça login para acessar seu perfil.</p>
+                    <p><a href="#loginModal"><button class="btn-redirect-login">LOGIN</button></a></p>
+                </div>
+            </div>';
+            break;
+        case 'error-login':
+            $message = '
+            <div id="errorLoginModal" class="modal">
+                <div class="confirm-div">
+                    <a href="#fechar" title="Fechar" class="fechar">x</a>
+                    <p><img src="../../public/images/exclamacao.png" alt="Arquivo Vivo"></p>
+                    <h1>ERRO DE LOGIN!!!</h1>
+                    <p>Senha ou e-mail incorretos.</p>
+                    <p><a href="#loginModal"><button class="btn-redirect-login">TENTAR NOVAMENTE</button></a></p>
+                </div>
+            </div>';
+            break;
+    }
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,18 +86,18 @@
                     <strong>ESTILO</strong>
                 </p>
                 <div class="group-buttons">
-                    <button class="btn-cadaster animate-up-buttons" onclick="window.location.href = '#cadasterModal'">cadastrar</button>
-                    <button class="btn-login animate-up-buttons" onclick="window.location.href = '#loginModal'">login</button>
+                    <?=$buttons?>
                     <button class="btn-portfolio animate-up-buttons" onclick="window.location.href = 'furnitures.php'">portfólio</button>
                 </div>
             </div>
+            <?=$message?>
             <div id="confirmCadasterModal" class="modal">
                 <div class="confirm-div">
                     <a href="#fechar" title="Fechar" class="fechar">x</a>
                     <p><img src="../../public/images/checked.svg" alt="Arquivo Vivo"></p>
                     <h1>CADASTRO EFETUADO COM SUCESSO!!!</h1>
                     <p>Logue para acessar o seu perfil e curtir móveis :)</p>
-                    <p><button class="btn-redirect-login">LOGIN</button></p>
+                    <p><a href="#loginModal"><button class="btn-redirect-login">LOGIN</button></a></p>
                 </div>
             </div>
             <div id="cadasterModal" class="modal">
@@ -69,11 +119,11 @@
                         </div>
                         <div>
                             <label for="password">senha:</label>
-                            <input type="text" name="password">
+                            <input type="password" name="password">
                         </div>
                         <div>
                             <label for="confirmPassword">confirmar senha:</label>
-                            <input type="text" name="confirmPassword">
+                            <input type="password" name="confirmPassword">
                         </div>
                         <p><button type="submit">CADASTRAR</button></p>
                         <p><a href="#">Já possuo cadastro</a></p>
@@ -85,14 +135,14 @@
                 <div class="login-div">
                     <a href="#fechar" title="Fechar" class="fechar">x</a>
                     <p><img src="../../public/images/login-logo.svg" alt="Arquivo Vivo"></p>
-                    <form action="">
+                    <form action="../Model/Login.php" method="post">
                         <div>
                             <label for="email">email:</label>
                             <input type="text" name="email">
                         </div>
                         <div>
                             <label for="password">senha:</label>
-                            <input type="text" name="password">
+                            <input type="password" name="password">
                         </div>
                         <p><button type="submit">LOGAR</button></p>
                         <span>

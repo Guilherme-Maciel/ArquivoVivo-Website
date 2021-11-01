@@ -1,3 +1,4 @@
+
 #container main .modal{
     position: fixed;
     top: 0;
@@ -16,6 +17,7 @@
     align-items: center;
     justify-content: center;
 }
+
 #container main .modal:target {
     opacity: 1;
     pointer-events: auto;

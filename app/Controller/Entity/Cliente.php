@@ -11,76 +11,53 @@ use PDO;
 use \App\Lib\Db\Database;
 
 class Cliente{
-    private $id;
-    private $name;
-    private $lastName;
-    private $tel1;
-    private $tel2;
-    private $email;
-    private $password;
-    private $city;
-    private $state;
-    private $street;
-    private $district;
-    private $resNum;
-    private $cep;
-    private $comple;
-    private $situacion;
-    private $date;
-
-    public function __construct(
-        $name, 
-        $lastName, 
-        $tel1, 
-        $tel2, 
-        $email, 
-        $password, 
-        $city, $state, 
-        $street, 
-        $district, 
-        $resNum, 
-        $cep, 
-        $comple)
-    {
-        $this->name = $name;
-        $this->lastName = $lastName;
-        $this->tel1 = $tel1;
-        $this->tel2 = $tel2;
-        $this->email = $email;
-        $this->password = $password;
-        $this->city = $city;
-        $this->state = $state;
-        $this->street = $street;
-        $this->district = $district;
-        $this->resNum = $resNum;
-        $this->cep = $cep;
-        $this->comple = $comple;
-    }
+    public $id;
+    public $c_nome;
+    public $c_sobrenome;
+    public $c_telCel = null;
+    public $c_telFixo = null;
+    public $c_email;
+    public $c_senha;
+    public $c_cidade = null;
+    public $c_estado = null;
+    public $c_rua = null;
+    public $c_bairro = null;
+    public $c_resNum = null;
+    public $c_cep = null;
+    public $c_complemento = null;
+    public $c_state = null;
+    public $c_dataReg = null;
 
     public function register(){
 
-        $this->date = date('Y-m-d H:i:s');
-        $this->situacion = 'ativo';
+        $date = date('Y-m-d H:i:s');
+        $situacion = 'ativo';
 
         $obDatabase = new Database('cliente');
-        $this->id = $obDatabase->insert([
-            'c_nome' => $this->name,
-            'c_sobrenome' => $this->lastName,
-            'c_telCel' => $this->tel1,
-            'c_telFixo' => $this->tel2,
-            'c_email' => $this->email,
-            'c_senha' => $this->password,
-            'c_cidade' => $this->city,
-            'c_estado' => $this->state,
-            'c_rua' => $this->street,
-            'c_bairro' => $this->district,
-            'c_numRes' => $this->resNum,
-            'c_cep' => $this->cep,
-            'c_complemento' => $this->comple,
-            'c_dtReg' => $this->date,
-            'c_state' => $this->situacion
+        $this->c_id = $obDatabase->insert([
+            'c_nome' => $this->c_nome,
+            'c_sobrenome' => $this->c_sobrenome,
+            'c_telCel' => $this->c_telCel,
+            'c_telFixo' => $this->c_telFixo,
+            'c_email' => $this->c_email,
+            'c_senha' => $this->c_senha,
+            'c_cidade' => $this->c_cidade,
+            'c_estado' => $this->c_estado,
+            'c_rua' => $this->c_rua,
+            'c_bairro' => $this->c_bairro,
+            'c_numRes' => $this->c_numRes,
+            'c_cep' => $this->c_cep,
+            'c_complemento' => $this->c_complemento,
+            'c_dtReg' => $date,
+            'c_state' => $situacion
         ]);
 
+        return true;
+
+    }
+
+    public static function getLoginUser($email, $password){
+        return (new Database('cliente'))->select('c_email = "'.$email.'" and c_senha = "'.$password.'"');
     }
 
 }
