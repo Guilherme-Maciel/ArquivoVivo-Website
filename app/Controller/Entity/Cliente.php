@@ -56,6 +56,23 @@ class Cliente{
 
     }
 
+    public function updateCliente(){
+        return (new Database('cliente'))->update('c_email = "'.$this->c_email.'"',[
+        'c_nome' => $this->c_nome,
+        'c_sobrenome' => $this->c_sobrenome,
+        'c_email' => $this->c_email,
+        'c_senha' => $this->c_senha,
+        'c_telFixo' => $this->c_telFixo,
+        'c_telCel' => $this->c_telCel,
+        'c_rua' => $this->c_rua,
+        'c_bairro' => $this->c_bairro,
+        'c_cep' => $this->c_cep,
+        'c_numRes' => $this->c_resNum,
+        'c_complemento' => $this->c_complemento,
+        ]);
+
+    }
+
     public static function getLoginUser($email, $password){
         return (new Database('cliente'))->select('c_email = "'.$email.'" and c_senha = "'.$password.'"');
     }

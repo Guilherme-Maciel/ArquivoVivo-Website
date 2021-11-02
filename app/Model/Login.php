@@ -15,6 +15,7 @@ $getLogin = Cliente::getLoginUser($_POST['email'], $_POST['password']);
 if($getLogin->rowCount() == 1){
     $login = $getLogin->fetch();
 
+    $_SESSION['id_session'] = $login['c_id'];
     $_SESSION['login_session'] = $login['c_email'];
     $_SESSION['pass_session'] = $login['c_senha'];
     $_SESSION['userName_session'] = $login['c_nome'];
@@ -32,6 +33,6 @@ if($getLogin->rowCount() == 1){
 }
 else{
     session_destroy();
-    header("location: ../View/index.php?status=error-login#errorLoginModal");
+    header("location: ../View/furnitures.php#errorLike");
     
 }

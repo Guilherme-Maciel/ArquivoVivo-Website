@@ -3,6 +3,7 @@
     require __DIR__.'../../../vendor/autoload.php';
 
     use \App\Controller\Entity\Movel;
+    use App\Controller\Entity\Curtido;
 
     //validação do ID recebido por GET
     if(!isset($_GET['id']) or !is_numeric($_GET['id'])){
@@ -12,20 +13,56 @@
 
     //Variáveis de construção HTML
     $results = '';
+    $results2 = '';
     $resultAssoc = '';
     $dispo = '';
     $designers = '';
     $categoria = '';
     $business = '';
+    $heart = 'heart.svg';
+    $href = 'Like.php';
 
+    //Objetos
     $furniture = Movel::getMovel($_GET['id']);
+    $obCurtido = new Curtido;
+
+    if(!isset($_SESSION)){
+        session_start();
+
+        if(!isset($_SESSION['login_session']) and  !isset($_SESSION['pass_session'])){
+            session_destroy();
+        }else{
+            $id = $_SESSION['id_session'];
+            $email = $_SESSION['login_session'];
+            $pass = $_SESSION['pass_session'];
+            $name = $_SESSION['userName_session'];
+            $lastName = $_SESSION['userLast_session'];
+            $telFix = $_SESSION['telFix_session'];
+            $telCel = $_SESSION['telCel_session'];
+            $street = $_SESSION['street_session'];
+            $district = $_SESSION['district_session'];
+            $cep = $_SESSION['cep_session'];
+            $numRes = $_SESSION['numRes_session'];
+            $complement = $_SESSION['complement_session'];
+
+            if($obCurtido->getCurtido($_GET['id'], $id)->rowCount() == 1){
+                $heart = 'heartLike.png';
+                $href = 'Deslike.php';
+            }
+            else{
+                $heart = 'heart.svg';
+                $href = 'Like.php';
+            }
+        }
+        
+    }
     
+
     //Construção e disponibilidade de acordo com o atributo m_qtdEstoque
     if($furniture->m_qtdEstoque <= 0){
         $dispo = '<span class="indis">INDISPONÍVEL</span>';
     }else{
         $dispo = '<span class="dis">DISPONÍVEL</span>';
-
     }
 
     //Construção da estrutura HTML do Móvel (caso seja de AMBIENTES ou não)
@@ -48,7 +85,7 @@
                 <div class="image-furniture">
                     <img src="data:'.$furniture->m_typeImg.';base64,'.base64_encode($furniture->m_imagem).'"">
                     <p>'.$dispo.' '.$furniture->m_qtdEstoque.' em estoque</p>
-                    <p class="heart"><img src="../../public/images/heart.svg" alt="coração"></p>
+                    <p class="heart"><a href="../Model/'.$href.'?id='.$_GET['id'].'"><img src="../../public/images/'.$heart.'" alt="coração"></a></p>
                 </div>
                 <div class="furniture-informations">
                     <h1>'.utf8_encode($furniture->m_titulo).'</h1>
@@ -78,7 +115,7 @@
             <div class="image-furniture">
                 <img src="data:'.$furniture->m_typeImg.';base64,'.base64_encode($furniture->m_imagem).'"">
                 <p>'.$dispo.' '.$furniture->m_qtdEstoque.' em estoque</p>
-                <p class="heart"><img src="../../public/images/heart.svg" alt="coração"></p>
+                <p class="heart"><a href="../Model/'.$href.'?id='.$_GET['id'].'"><img src="../../public/images/'.$heart.'" alt="coração"></a></p>
             </div>
             <div class="furniture-informations">
                 <h1>'.utf8_encode($furniture->m_titulo).'</h1>
@@ -118,6 +155,8 @@
     <link rel="stylesheet" type="text/css" href="../../public/css/header.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/footer.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/scroll.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/modal.css">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -128,15 +167,28 @@
 
 <body>
     <div id="container">
+        <main>
+            <div id="errorLike" class="modal">
+                <div class="confirm-div">
+                    <a href="#fechar" title="Fechar" class="fechar">x</a>
+                    <p><img src="../../public/images/exclamacao.png" alt="Arquivo Vivo"></p>
+                    <h1>LOGIN NECESSÁRIO</h1>
+                    <p>Faça login para curtir um móvel.</p>
+                    <p><a href="index.php#loginModal"><button class="btn-redirect-login" style="cursor: pointer;">LOGIN</button></a></p>
+                </div>
+            </div>
+        </main>
     <?php include 'includes/header.php'?>
         <button id="back" onClick="history.go(-1)"><img src="../../public/images/arrow.png" alt="arrow"></button>
         <hr>
+        <br>
         <?=$results?>
         <?=$designers?>
         <?=$categoria?>
         <?=$resultAssoc?>
         <?=$business?>
         <?=$results2?>
+        <br>
         <hr>
         <?php include 'includes/footer.php'?>
     </div>

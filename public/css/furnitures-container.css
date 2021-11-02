@@ -1,0 +1,87 @@
+#container section .furnitures-container{
+    display: flex;
+    justify-content: center;
+   
+ }
+ #container section .furnitures-container div{
+     width: auto;
+     text-align: center;
+ }
+ #container section .furnitures-container fieldset{
+     display: inline-block;
+     border: none;
+     margin-left: 1rem;
+     margin-top: 1rem;
+     transition: transform .2s;
+     cursor: pointer;
+ 
+ }
+ #container section .furnitures-container fieldset:hover{
+     transform: scale(1.1);
+ }
+ 
+ #container .furnitures-container .sample-furniture{
+     width: 100px;
+     background: white;
+     border-radius: 20px;
+ }
+ 
+ 
+ #container section .furnitures-container .sample-furniture div{
+     height: 100px;
+     border-radius: 20px;
+     background-size: cover
+ 
+ }
+ 
+ #container section .furnitures-container .sample-furniture h3{
+     font-family: Raleway, 'Sans Serif';
+     text-align: center;
+     color: #FF4242;
+     margin-top: 15px;
+     font-size: 1.2rem;
+ }
+ #container section .furnitures-container .sample-furniture p{
+     text-align: center;
+     font-family: Raleway, 'Sans Serif';
+     font-size: 12px;
+     margin-top: 4px;
+     line-height: 2rem;
+     height: 4rem;
+     overflow: hidden;
+ 
+ }
+
+ @media (min-width:1080px){
+
+    #container .furnitures-container .sample-furniture{
+        width: 240px;
+        height: auto;
+        background: white;
+        border-radius: 20px;
+        margin-right: 2.0rem;
+        margin-top: 2.0rem;
+    }
+    
+    
+    #container section .furnitures-container .sample-furniture div{
+        height: 17.0rem;
+        border-radius: 2.0rem;
+        background-size: cover;
+    
+    }
+    #container section .furnitures-container .sample-furniture h3{
+        font-family: Raleway, 'Sans Serif';
+        text-align: center;
+        color: #FF4242;
+        margin-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        font-size: 1.8rem;
+    }
+    #container section .furnitures-container .sample-furniture p{
+        text-align: center;
+        font-family: Raleway, 'Sans Serif';
+        font-size: 1.8rem;
+        margin-top: 0.4rem;
+    }
+}

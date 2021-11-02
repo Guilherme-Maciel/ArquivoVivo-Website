@@ -83,4 +83,24 @@ class Database{
 
     }
 
+    public function update($where,$values){
+        //dados
+        $fields = array_keys($values);
+        //query
+        $query = 'UPDATE '.$this->table.' SET '.implode('=?,',$fields).'=? WHERE '.$where;
+
+        //execução
+        $this->execute($query,array_values($values));
+        return true;
+    }
+
+    public function delete($where){
+        //query
+        $query = 'DELETE FROM '.$this->table.' WHERE '.$where;
+        //execução
+        $this->execute($query);
+        return true;
+
+    }
+
 }
