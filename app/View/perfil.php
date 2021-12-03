@@ -72,7 +72,7 @@ if (strlen($resultMoveis) == 0){
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8" />
@@ -90,6 +90,10 @@ if (strlen($resultMoveis) == 0){
     <link
         href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,100&display=swap"
         rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+
     <title>Perfil</title>
 </head>
 
@@ -119,7 +123,7 @@ if (strlen($resultMoveis) == 0){
                 <div class="input-box">
                     <div class="input-single">
                         <p>email:</p>
-                        <input type="text" name="email" value="<?=$email?>" <?=$readonly?>/>
+                        <input type="email" name="email" value="<?=$email?>" <?=$readonly?>/>
                     </div>
                     <div class="input-single">
                         <p>senha.:</p>
@@ -129,11 +133,11 @@ if (strlen($resultMoveis) == 0){
                 <div class="input-box">
                     <div class="input-single">
                         <p>tel fixo:</p>
-                        <input type="text" name="telFix" value="<?=$telFix?>" <?=$readonly?>/>
+                        <input id="telFix" type="text" name="telFix" value="<?=$telFix?>" <?=$readonly?>/>
                     </div>
                     <div class="input-single">
                         <p>tel cel:</p>
-                        <input type="text" name="telCel" value="<?=$telCel?>" <?=$readonly?>/>
+                        <input id="telCel" type="text" name="telCel" value="<?=$telCel?>" <?=$readonly?>/>
                     </div>
                 </div>
                 <div class="input-box">
@@ -150,7 +154,7 @@ if (strlen($resultMoveis) == 0){
                     <div class="input-cep-num">
                         <div>
                             <p>cep:</p>
-                            <input type="text" name="cep" value="<?=$cep?>" <?=$readonly?>/>
+                            <input id="cep" type="text" name="cep" value="<?=$cep?>" <?=$readonly?>/>
                         </div>
                         <div>
                             <p>n°:</p>
@@ -179,6 +183,11 @@ if (strlen($resultMoveis) == 0){
         </section>
         <?php include 'includes/footer.php'?>
     </div>
-</body>
+    <script type="text/javascript">
+    $("#telCel").mask("(00) 00000-0000");
+    $("#telFix").mask("(00) 0000-0000");
+    $("#cep").mask("00000-000");
 
+    </script>
+</body>
 </html>

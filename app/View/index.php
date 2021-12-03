@@ -1,7 +1,36 @@
 <?php
 
+
+require __DIR__ . '../../../vendor/autoload.php';
+
+use App\Controller\Entity\Movel;
+
 $buttons = '';
 $message = '';
+
+$sample1 = '';
+$sample2 = '';
+
+
+$furnitures = Movel::getMoveis(null, 'RAND()', 5);
+
+foreach($furnitures as $furniture){
+$sample1 .= '
+<a href="viewMoveis.php?id='.$furniture->m_id.'"> 
+<div class="sample-furniture">
+    <div style="background-image: url(data:image/jpg;base64,' . base64_encode($furniture->m_imagem) . '"></div>
+</div>
+</a>';
+}
+
+foreach($furnitures as $furniture){
+    $sample2 .= '
+    <a href="viewMoveis.php?id='.$furniture->m_id.'">
+    <div class="sample-furniture">
+        <div style="background-image: url(data:image/jpg;base64,' . base64_encode($furniture->m_imagem) . '"></div>
+    </div>
+    </a>';
+ }
 
 if(!isset($_SESSION)){
     session_start();
@@ -50,25 +79,26 @@ if(isset($_GET['status'])){
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Styles-->
     <link rel="stylesheet" type="text/css" href="../../public/css/home.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/header.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/footer.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/modal.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/animations.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/scroll.css">
-
+    <!--Raleway Font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,100&display=swap" rel="stylesheet">
+    <!--MAPA-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,100&display=swap" rel="stylesheet">
     <title>Arquivo Vivo - Home</title>
 </head>
 
@@ -107,23 +137,23 @@ if(isset($_GET['status'])){
                     <form method="post" action="../Model/Register.php">
                         <div>
                             <label for="name">nome:</label>
-                            <input type="text" name="name">
+                            <input type="text" name="name" required>
                         </div>
                         <div>
                             <label for="lastName">sobrenome:</label>
-                            <input type="text" name="lastName">
+                            <input type="text" name="lastName" required>
                         </div>
                         <div>
                             <label for="email">email:</label>
-                            <input type="text" name="email">
+                            <input type="email" name="email" required>
                         </div>
                         <div>
                             <label for="password">senha:</label>
-                            <input type="password" name="password">
+                            <input type="password" name="password" required>
                         </div>
                         <div>
                             <label for="confirmPassword">confirmar senha:</label>
-                            <input type="password" name="confirmPassword">
+                            <input type="password" name="confirmPassword" required>
                         </div>
                         <p><button type="submit">CADASTRAR</button></p>
                         <p><a href="#">Já possuo cadastro</a></p>
@@ -138,11 +168,11 @@ if(isset($_GET['status'])){
                     <form action="../Model/Login.php" method="post">
                         <div>
                             <label for="email">email:</label>
-                            <input type="text" name="email">
+                            <input type="email" name="email" required>
                         </div>
                         <div>
                             <label for="password">senha:</label>
-                            <input type="password" name="password">
+                            <input type="password" name="password" required>
                         </div>
                         <p><button type="submit">LOGAR</button></p>
                         <span>
@@ -185,38 +215,10 @@ if(isset($_GET['status'])){
                 <h1>AMOSTRA</h1><br>
                 <hr><br>
                 <div class="container-furnitures">
-                    <div class="sample-furniture">
-                        <div style="background-image: url(../../public/images/cadeira2.jpg);"></div>
-                    </div>
-                    <div class="sample-furniture">
-                        <div style="background-image: url(../../public/images/cadeira2.jpg);"></div>
-                    </div>
-                    <div class="sample-furniture">
-                        <div style="background-image: url(../../public/images/cadeira2.jpg);"></div>
-                    </div>
-                    <div class="sample-furniture">
-                        <div style="background-image: url(../../public/images/cadeira2.jpg);"></div>
-                    </div>
-                    <div class="sample-furniture">
-                        <div style="background-image: url(../../public/images/cadeira2.jpg);"></div>
-                    </div>
+                    <?=$sample1?>
                 </div>
                 <div class="container-furnitures">
-                    <div class="sample-furniture">
-                        <div style="background-image: url(../../public/images/cadeira2.jpg);"></div>
-                    </div>
-                    <div class="sample-furniture">
-                        <div style="background-image: url(../../public/images/cadeira2.jpg);"></div>
-                    </div>
-                    <div class="sample-furniture">
-                        <div style="background-image: url(../../public/images/cadeira2.jpg);"></div>
-                    </div>
-                    <div class="sample-furniture">
-                        <div style="background-image: url(../../public/images/cadeira2.jpg);"></div>
-                    </div>
-                    <div class="sample-furniture">
-                        <div style="background-image: url(../../public/images/cadeira2.jpg);"></div>
-                    </div>
+                    <?=$sample2?>
                 </div>
             </div>
             <div class="location">

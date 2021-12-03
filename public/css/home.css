@@ -305,6 +305,12 @@ body {
         height: 26rem;
         background: var(--color-white);
         border-radius: 2rem;
+        cursor: pointer;
+        transition: transform .2s;
+    }
+
+    #container section .sample .container-furnitures .sample-furniture:hover{
+        transform: scale(1.05);
     }
     
     #container section .sample .container-furnitures .sample-furniture div {

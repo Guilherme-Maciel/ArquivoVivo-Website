@@ -47,8 +47,10 @@
     $designerCat = Designer::getDesignerByCategoria($_GET['id']);
     //Construção da estrutura HTML para as categorias as quais o designer usufrui
     foreach ($designerCat as $cat){
-        $resultsCat .= '<a href=furnitures.php?filter='.$cat->ct_id.'>|'.$cat->ct_nome.'|<a>';
+        $resultsCat .= utf8_encode('<a href=furnitures.php?filter='.$cat->ct_id.'>|'.$cat->ct_nome.'|<a>');
     }
+
+    $moveisQtd = Movel::getQtdMoveis('categoria.ct_id = moveis.ct_id AND d_id = '.$_GET['id'])
 
 ?>
 <!DOCTYPE html>
@@ -79,7 +81,7 @@
         <button onClick="history.go(-1)"><img src="../../public/images/arrow.png" alt="arrow"></button>
         <hr>
             <?=$results?>
-            <p>MÓVEIS DISPONÍVEIS:10</p>
+            <p>MÓVEIS DISPONÍVEIS: <?=$moveisQtd?></p>
                 <p>CATEGORIAS: <?=$resultsCat?></p>
             </div>
         </div>
