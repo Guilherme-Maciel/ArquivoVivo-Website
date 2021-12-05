@@ -35,6 +35,11 @@ class Movel{
         ->fetchAll(PDO::FETCH_CLASS,self::class);
     }
 
+    public static function getAmostra($where = null, $order = null, $limit = null, $offset = null){
+        return (new Database('moveis, categoria'))->selectAmostra($where,$order,$limit,$offset)
+        ->fetchAll(PDO::FETCH_CLASS,self::class);
+    }
+
     public static function getQtdMoveis($where = null){
         return (new Database('moveis, categoria'))->select($where, null, null, 'COUNT(*) as qtd')
         ->fetchObject()->qtd;

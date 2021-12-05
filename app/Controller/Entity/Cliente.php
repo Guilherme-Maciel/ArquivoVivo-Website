@@ -77,4 +77,9 @@ class Cliente{
         return (new Database('cliente'))->select('c_email = "'.$email.'" and c_senha = "'.$password.'"');
     }
 
+    public static function forgetPassword($email){
+        return (new Database('cliente'))->select('c_email = "'.$email.'"');
+    }
+
+
 }

@@ -50,7 +50,7 @@ foreach ($furnitures as $furniture){
                 <article onclick="window.location.href = `viewMoveis.php?id='.$furniture->m_id.'`">
                     <div class="sample-furniture">
                         <div style="background-image: url(data:'.$furniture->m_typeImg.';base64,'.base64_encode($furniture->m_imagem).');"></div>
-                        <p><strong>'.$furniture->m_titulo.'</strong></p>
+                        <p><strong>'.utf8_encode($furniture->m_titulo).'</strong></p>
                         <h3>'.$furniture->ct_nome.'</h3>
                     </div>
                 </article>
@@ -78,6 +78,7 @@ if (strlen($resultMoveis) == 0){
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../../public/images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="../../public/css/perfil.css" />
     <link rel="stylesheet" type="text/css" href="../../public/css/header.css" />
     <link rel="stylesheet" type="text/css" href="../../public/css/furnitures-container.css">

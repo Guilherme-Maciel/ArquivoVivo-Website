@@ -77,7 +77,7 @@
         foreach ($assocArray as $assocItem){
             $mvAssoc = Movel::getMovel($assocItem);
             $designers .= ' |<a href="viewDesigners.php?id='.$mvAssoc->d_id.'">'.utf8_encode($mvAssoc->m_designers).'</a>| ';
-            $resultAssoc .= '<li><a href="viewMoveis.php?id='.$mvAssoc->m_id.'">'.$mvAssoc->m_titulo.'</a></li>';
+            $resultAssoc .= '<li><a href="viewMoveis.php?id='.$mvAssoc->m_id.'">'.utf8_encode($mvAssoc->m_titulo).'</a></li>';
         }
 
         $results = '
@@ -103,7 +103,7 @@
                     <a href="https://wa.me/5511942104521?text=Olá%20!!%20Me%20Interressei%20pelo(a)%20'.$furniture->m_titulo.'%20de%20ID:%20'.$furniture->m_id.'.%20Podemos%20fazer%20contato?:)" target="_blank">
                         <button class="whatsapp">WhatsApp <img src="../../public/images/whatsapp.svg"
                                 alt="whatsapp"></button></a>
-                    <a href="mailto:guilherme5932.ms@gmail.com?subject=CONTATO%20VIA%20SITE%20-%20NEGÓCIO:&body=Olá%20!!%20Me%20Interressei%20pelo(a)%20'.$furniture->m_titulo.'%20de%20ID:%20'.$furniture->m_id.'.%20Podemos%20fazer%20contato?:)" target="_blank">
+                    <a style="cursor:pointer" href="mailto:guilherme5932.ms@gmail.com?subject=CONTATO%20VIA%20SITE%20-%20NEGÓCIO:&body=Olá%20!!%20Me%20Interressei%20pelo(a)%20'.$furniture->m_titulo.'%20de%20ID:%20'.$furniture->m_id.'.%20Podemos%20fazer%20contato?:)" target="_blank">
                         <button class="gmail">Gmail <img src="../../public/images/gmail.svg" alt="gmail"></button></a>
                     </div>
                 </div>
@@ -149,6 +149,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../public/images/favicon.ico">
     <title><?=strtoupper(utf8_encode($furniture->m_titulo))?></title>
     <link href="" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="../../public/css/view-moveis.css">

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../public/images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="../../public/css/reformas.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/header.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/footer.css">
@@ -43,8 +44,9 @@
             <div class="contato-reforma">
                 <h3>CONTATO</h3>
                 <p>
-                    <a href="url">contato@reformaflex.com.br</a><br>
-                    <a href="url">https//www.facebook.com/ReformaFlex</a>
+                    <a href="mailto:contato@reformaflex.com.br">contato@reformaflex.com.br</a>
+                    <br><br>
+                    <a href="https://www.facebook.com/ReformaFlex" target="_blank">FACEBOOK</a>
                 </p>
                 <br>
                 <br>

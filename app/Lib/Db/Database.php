@@ -83,6 +83,21 @@ class Database{
 
     }
 
+    public function selectAmostra($where = null, $order = null, $limit = null, $offset = null, $fields = '*'){
+        //parâmetros de consulta Mysql
+        $where = strlen($where) ? 'WHERE '.$where : '';
+        $order = strlen($order) ? 'ORDER BY '.$order : '';
+        $limit = strlen($limit) ? 'LIMIT '.$limit.' OFFSET '. $offset : '';
+
+        //query
+        $query = 'SELECT '.$fields.' FROM '.$this->table.' '.$where.' '.$order.' '.$limit;
+
+        //execução da query
+        return $this->execute($query);
+
+    }
+
+
     public function update($where,$values){
         //dados
         $fields = array_keys($values);

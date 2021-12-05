@@ -7,47 +7,43 @@ use App\Controller\Entity\Movel;
 
 $buttons = '';
 $message = '';
-
 $sample1 = '';
 $sample2 = '';
 
 
-$furnitures = Movel::getMoveis(null, 'RAND()', 5);
+$furnitures = Movel::getAmostra(null, 'RAND()', 5, 0);
+$furnitures2 = Movel::getAmostra(null, 'RAND()', 5, 5);
 
-foreach($furnitures as $furniture){
-$sample1 .= '
-<a href="viewMoveis.php?id='.$furniture->m_id.'"> 
+
+foreach ($furnitures as $furniture) {
+    $sample1 .= '
 <div class="sample-furniture">
     <div style="background-image: url(data:image/jpg;base64,' . base64_encode($furniture->m_imagem) . '"></div>
-</div>
-</a>';
+</div>';
 }
 
-foreach($furnitures as $furniture){
+foreach ($furnitures2 as $furniture2) {
     $sample2 .= '
-    <a href="viewMoveis.php?id='.$furniture->m_id.'">
     <div class="sample-furniture">
-        <div style="background-image: url(data:image/jpg;base64,' . base64_encode($furniture->m_imagem) . '"></div>
-    </div>
-    </a>';
- }
+        <div style="background-image: url(data:image/jpg;base64,' . base64_encode($furniture2->m_imagem) . '"></div>
+    </div>';
+}
 
-if(!isset($_SESSION)){
+if (!isset($_SESSION)) {
     session_start();
 
     $buttons = '
     ';
-
 }
 
-if(!isset($_SESSION['login_session']) and  !isset($_SESSION['pass_session'])){
+if (!isset($_SESSION['login_session']) and  !isset($_SESSION['pass_session'])) {
     $buttons = '
     <button style="opacity:<?=$opacity?>" class="btn-cadaster animate-up-buttons" onclick="window.location.href = `#cadasterModal`">cadastrar</button>
     <button style="opacity:<?=$opacity?>" class="btn-login animate-up-buttons" onclick="window.location.href = `#loginModal`">login</button>';
 }
 
 
-if(isset($_GET['status'])){
+if (isset($_GET['status'])) {
     switch ($_GET['status']) {
         case 'error_session':
             $message = '
@@ -73,6 +69,39 @@ if(isset($_GET['status'])){
                 </div>
             </div>';
             break;
+        case 'senha-errada':
+            $message = '
+                <div id="errorCadasterModal" class="modal">
+                    <div class="confirm-div">
+                        <a href="#cadasterModal" title="Fechar" class="fechar">x</a>
+                        <p><img src="../../public/images/exclamacao.png" alt="Arquivo Vivo"></p>
+                        <h1>ERRO DE CADASTRO!!!</h1>
+                        <p>As senhas não combinam. Tente novamente.</p>
+                    </div>
+                </div>';
+            break;
+        case 'email-send':
+            $message = '
+                    <div id="emailSendModal" class="modal">
+                        <div class="confirm-div">
+                            <a href="#fechar" title="Fechar" class="fechar">x</a>
+                            <p><img src="../../public/images/checked.svg" alt="Arquivo Vivo"></p>
+                            <h1>SENHA ENVIADA</h1>
+                            <p>Verifique seu email para efetuar o login.</p>
+                        </div>
+                    </div>';
+            break;
+        case 'email-error':
+            $message = '
+                        <div id="emailErrorModal" class="modal">
+                            <div class="confirm-div">
+                                <a href="#fechar" title="Fechar" class="fechar">x</a>
+                                <p><img src="../../public/images/exclamacao.png" alt="Arquivo Vivo"></p>
+                                <h1>ERRO NA SOLICITAÇÃO</h1>
+                                <p>Ocorreu um erro. Não foi possível enviar sua senha.</p>
+                            </div>
+                        </div>';
+            break;
     }
 }
 
@@ -80,10 +109,12 @@ if(isset($_GET['status'])){
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../public/images/favicon.ico">
     <!--Styles-->
     <link rel="stylesheet" type="text/css" href="../../public/css/home.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/header.css">
@@ -116,11 +147,11 @@ if(isset($_GET['status'])){
                     <strong>ESTILO</strong>
                 </p>
                 <div class="group-buttons">
-                    <?=$buttons?>
+                    <?= $buttons ?>
                     <button class="btn-portfolio animate-up-buttons" onclick="window.location.href = 'furnitures.php'">portfólio</button>
                 </div>
             </div>
-            <?=$message?>
+            <?= $message ?>
             <div id="confirmCadasterModal" class="modal">
                 <div class="confirm-div">
                     <a href="#fechar" title="Fechar" class="fechar">x</a>
@@ -176,9 +207,23 @@ if(isset($_GET['status'])){
                         </div>
                         <p><button type="submit">LOGAR</button></p>
                         <span>
-                            <a href="#" class="forget">Esqueceu sua senha?</a>
+                            <a href="#forgetPassModal" class="forget">Esqueceu sua senha?</a>
                             <a href="#" class="cadaster">Não possui cadastro?</a>
                         </span>
+                    </form>
+
+                </div>
+            </div>
+            <div id="forgetPassModal" class="modal">
+                <div class="login-div">
+                    <a href="#fechar" title="Fechar" class="fechar">x</a>
+                    <p><img src="../../public/images/login-logo.svg" alt="Arquivo Vivo"></p>
+                    <form action="../Model/Forget-Password.php" method="post">
+                        <div>
+                            <label for="email">email:</label>
+                            <input type="email" name="email" required>
+                        </div>
+                        <p><button type="submit">ENVIAR EMAIL</button></p>
                     </form>
 
                 </div>
@@ -215,10 +260,10 @@ if(isset($_GET['status'])){
                 <h1>AMOSTRA</h1><br>
                 <hr><br>
                 <div class="container-furnitures">
-                    <?=$sample1?>
+                    <?= $sample1 ?>
                 </div>
                 <div class="container-furnitures">
-                    <?=$sample2?>
+                    <?= $sample2 ?>
                 </div>
             </div>
             <div class="location">

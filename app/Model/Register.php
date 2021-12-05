@@ -25,7 +25,7 @@ if(isset($_POST['name'], $_POST['lastName'], $_POST['email'], $_POST['password']
         exit;
     }
     else{
-        header('location: ../View/index.php?message=cadastro_erro');
+        header('location: ../View/index.php?status=senha-errada#errorCadasterModal');
         exit;
     }
 }

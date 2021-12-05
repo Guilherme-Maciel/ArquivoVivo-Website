@@ -33,6 +33,6 @@ if($getLogin->rowCount() == 1){
 }
 else{
     session_destroy();
-    header("location: ../View/furnitures.php#errorLike");
+    header("location: ../View/index.php?status=error-login#errorLoginModal");
     
 }

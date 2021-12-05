@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../public/images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="../../public/css/locacao.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/header.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/footer.css">
@@ -45,8 +46,9 @@
             <div class="contato-reforma">
                 <h3>CONTATO</h3>
                 <p>
-                    <a href="url">ellen@arquivovivomoveis.com.br</a><br>
-                    <a href="url">@arquivovivolocacoesmoveis</a>
+                    <a href="mailto:ellen@arquivovivomoveis.com.br">ellen@arquivovivomoveis.com.br</a>
+                    <br><br>
+                    <a href="https://www.instagram.com/arquivovivolocacoesmoveis/">INSTAGRAM</a>
                 </p>
                 <br>
                 <br>
