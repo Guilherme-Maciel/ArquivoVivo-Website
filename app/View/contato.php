@@ -44,7 +44,7 @@
                     rows="6"></textarea>
                 <div class="end-buttons">
                     <button class="send" type="submit">enviar</button>
-                    <button class="clear">limpar</button>
+                    <button type="reset" class="clear">limpar</button>
                 </div>
             </form>
         </section>
