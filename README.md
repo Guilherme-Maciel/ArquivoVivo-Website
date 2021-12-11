@@ -8,9 +8,12 @@ Aplicação de divulgação de portfólio e auxilio de negócio para a empresa d
 
 ## Objetivos do Projeto
 
-Projeto destinado ao projeto de conclusão do curso técnico
+Projeto destinado ao trabalho de conclusão do curso técnico
 de análise e desenvolvimento de sistemas, na ETEC Jardim Ângela, com o intuito
 de agilizar os processos da empresa Arquivo Vivo Móveis por meio de sistemas informátizados.
+<div align="center">
+  <img src="https://docs.google.com/uc?id=1Gqcfq_vQOWOGJfrDzVZUfSYCZPehdair" alt="etec" height="100" align="center">
+</div>
 
 - Documentação do projeto: <a href="">click here</a>
 - Site da instituição: <a href="https://etecjardimangela.com.br/">click here</a>
@@ -53,10 +56,30 @@ de agilizar os processos da empresa Arquivo Vivo Móveis por meio de sistemas in
 </a>
 
 ## Funcionalidades
+- [x] CRUD em PDO MySQL
+- [x] Login e cadastro de usuários
+- [x] Paginação
+- [x] Caixa de busca e filtros de categoria
+- [x] Curtir e Deslike
+- [x] Envio de e-mail pelo WebSite
 
 ## Pré-requisitos
+- PHP 7.2 
+- MySQL 5.7
+- Apache 2
+- Visual Studio Code
+- Git Bash
+- Composer
 
 ## Tecnologias e Ferramentas
+
+<div align="center">
+  
+| [<div align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/2560px-PHP-logo.svg.png" alt="php" height="50px"><p>PHP</p></div></a>](https://www.php.net/) | [<div align="center"><img src="https://logodownload.org/wp-content/uploads/2016/10/html5-logo-8.png" alt="html" height="50px"><p>HTML5</p></div>](https://developer.mozilla.org/pt-BR/docs/Web/HTML) | [<div align="center"><img src="https://static.cdnlogo.com/logos/c/18/css.svg" alt="css" height="50px"><p>CSS3</p></div>](https://developer.mozilla.org/pt-BR/docs/Web/CSS) | [<div align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png" alt="js" height="50px"><p>JavaScript</p></div>](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) | [<div align="center"><img src="https://www.blogson.com.br/wp-content/uploads/2020/12/logo-mysql-mysql-logo-png-images-are-download-crazypng-211.png" alt="mysql" height="50px"><p>MySQL</p></div>](https://dev.mysql.com/doc/) | [<div align="center"><img src="https://cdn.worldvectorlogo.com/logos/composer.svg" alt="composer" height="50px"><p>Composer</p></div>](https://getcomposer.org/) |
+|--------|--------|--------|--------|--------|--------|
+
+
+</div>
 
 ## Clonando o projeto
 
