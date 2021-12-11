@@ -1,5 +1,8 @@
 <?php
+/**
+ * Envio da senha ao e-mail do usuário, caso ele esqueça */ 
 
+//Carregamento das classes
 require __DIR__ . '../../../vendor/autoload.php';
 
 use App\Controller\Entity\Cliente;

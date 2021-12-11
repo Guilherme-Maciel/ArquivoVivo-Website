@@ -3,6 +3,8 @@
  * Classe responsável por exercer controle sobre a entidade Moveis
  * 
  * getMoveis() -> listagem de dados dos Moveis pelos parâmetros WHERE, ORDER e LIMIT
+ * getAmostra($where, $order, $limit, $offset) -> método exclusivo do arquivo index.php; realiza a 
+ * consulta aleatória dos móveis no banco
  * getMovel() -> listagem única por ID da entidade Moveis
  * getQtdMoveis() -> retorna o número total de dados obtidos
  * getMovelByDesigner() -> retorna os dados de móveis pertencentes a certo Designer pelo parâmetro ID

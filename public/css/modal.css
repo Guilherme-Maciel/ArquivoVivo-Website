@@ -1,4 +1,6 @@
-
+/*
+CSS responsável pela estilização dos modais na tela HOME
+*/
 #container main .modal{
     position: fixed;
     top: 0;

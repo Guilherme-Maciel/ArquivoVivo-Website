@@ -1,9 +1,11 @@
 <?php
 /**
- * Classe responsável por exercer controle sobre a entidade Moveis
+ * Classe responsável por exercer controle sobre a entidade Curtidos
  * 
- * getMoveis() -> listagem de dados dos Moveis pelos parâmetros WHERE, ORDER e LIMIT
- * 
+ * register() -> registra um novo móvei curtido
+ * getCurtidos($id) -> listagem dos móveis curtidos pelo id $id
+ * getCurtido($idM, $idC) -> listagem do móvel curtido de id do móvel $idM e do cliente de id $idC
+ * excluir() -> remove um móvel curtido do banco
  */
 
 namespace App\Controller\Entity;

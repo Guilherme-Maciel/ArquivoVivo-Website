@@ -21,7 +21,6 @@
         strlen($search) ? 'd_nome LIKE "%' . $search . '%"' : null,
         'd_id != 1'
     ];
-
     $condition = array_filter($condition); //Remove os campos GET vazios do array
 
     //Prepara as querys WHERE para consulta

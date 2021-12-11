@@ -1,5 +1,9 @@
 <?php
+/**
+ * Arquivo responsável pela atualização dos dados do usuário no banco de dados
+ */
 
+//Carregamento das classes
 require __DIR__.'../../../vendor/autoload.php';
 
 use App\Controller\Entity\Cliente;

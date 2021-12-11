@@ -1,3 +1,9 @@
+/*
+CSS responsável pela estilização da div de amostragem dos móveis nos arquivos:
+-designers.php
+-perfil.php
+-furnitures.php
+*/
 #container section .furnitures-container{
     display: flex;
     justify-content: center;

@@ -1,5 +1,13 @@
 <?php
+/**
+ * Arquivo responsável pela função de like da aplicação
+ * 
+ * Necessário haver uma sessão ativa
+ * 
+ * Adiciona um atributo ao banco de dados
+ */
 
+//Carregamento das classes
 require __DIR__.'../../../vendor/autoload.php';
 
 use App\Controller\Entity\Curtido;

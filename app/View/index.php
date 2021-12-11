@@ -1,48 +1,49 @@
 <?php
 
-
+//Carregamento das classes
 require __DIR__ . '../../../vendor/autoload.php';
 
 use App\Controller\Entity\Movel;
 
+//Variáveis de construção HTML
 $buttons = '';
 $message = '';
 $sample1 = '';
 $sample2 = '';
 
-
+//Embaralhamento da consulta de móveis no banco de dados
 $furnitures = Movel::getAmostra(null, 'RAND()', 5, 0);
 $furnitures2 = Movel::getAmostra(null, 'RAND()', 5, 5);
 
-
+//Primeiro campo de amostra de móveis
 foreach ($furnitures as $furniture) {
     $sample1 .= '
-<div class="sample-furniture">
-    <div style="background-image: url(data:image/jpg;base64,' . base64_encode($furniture->m_imagem) . '"></div>
-</div>';
+        <div class="sample-furniture">
+            <div style="background-image: url(data:image/jpg;base64,' . base64_encode($furniture->m_imagem) . '"></div>
+        </div>';
 }
-
+//Segundo campo de amostra de móveis
 foreach ($furnitures2 as $furniture2) {
     $sample2 .= '
     <div class="sample-furniture">
         <div style="background-image: url(data:image/jpg;base64,' . base64_encode($furniture2->m_imagem) . '"></div>
     </div>';
 }
-
+//Start da sessão
 if (!isset($_SESSION)) {
     session_start();
 
     $buttons = '
     ';
 }
-
+//Se não houver sessão ativa, botão login e cadastro são revelados ao usuário
 if (!isset($_SESSION['login_session']) and  !isset($_SESSION['pass_session'])) {
     $buttons = '
     <button style="opacity:<?=$opacity?>" class="btn-cadaster animate-up-buttons" onclick="window.location.href = `#cadasterModal`">cadastrar</button>
     <button style="opacity:<?=$opacity?>" class="btn-login animate-up-buttons" onclick="window.location.href = `#loginModal`">login</button>';
 }
 
-
+//Ações para mensagens da URL; ?status= 
 if (isset($_GET['status'])) {
     switch ($_GET['status']) {
         case 'error_session':

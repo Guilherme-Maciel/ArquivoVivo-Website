@@ -26,6 +26,7 @@
     $furniture = Movel::getMovel($_GET['id']);
     $obCurtido = new Curtido;
 
+    //Validação da sessão
     if(!isset($_SESSION)){
         session_start();
 

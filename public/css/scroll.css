@@ -1,3 +1,7 @@
+/*
+estilização do scroll do site
+*/
+
 body::-webkit-scrollbar {
     width: 12px;               /* width of the entire scrollbar */
   }

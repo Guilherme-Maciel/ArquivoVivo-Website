@@ -1,3 +1,4 @@
+<!--Inserção dinâmica do componente HEADER-->
 <header>
     <img src="../../public/images/logo.svg" id="logo">
     <input type="checkbox" id="bt_menu" />

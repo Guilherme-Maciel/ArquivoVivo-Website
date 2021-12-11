@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -51,6 +50,7 @@
         <?php include 'includes/footer.php'?>
     </div>
     <script type="text/javascript">
+    //Máscara para input de id="telCel" e id="telFix"
     $("#telCel").mask("(00) 00000-0000");
     $("#telFix").mask("(00) 0000-0000");
     </script>

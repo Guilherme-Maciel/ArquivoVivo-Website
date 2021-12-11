@@ -1,5 +1,12 @@
 <?php
+/**
+ * Arquivo responsável pela função de deslike da aplicação.
+ * 
+ * Necessário haver uma sessão ativa
+ * 
+ * Exclui o atributo do banco de dados */ 
 
+//Carregamento das classes
 require __DIR__.'../../../vendor/autoload.php';
 
 use App\Controller\Entity\Curtido;

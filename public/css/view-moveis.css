@@ -1,4 +1,7 @@
-﻿:root {
+﻿/*
+CSS responsável pela estilização do arquivo VIEWMOVEIS.PHP
+*/
+:root {
     font-size: 62.5%;
     --color-black: #000000;
     --color-gray-one: #171717;

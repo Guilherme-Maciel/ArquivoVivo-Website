@@ -5,6 +5,7 @@ require __DIR__.'../../../vendor/autoload.php';
 use \App\Controller\Entity\Movel;
 use \App\Controller\Entity\Curtido;
 
+//Validação da sessão
 if(!isset($_SESSION)){
     session_start();
 
@@ -22,17 +23,18 @@ if(!isset($_SESSION)){
     $complement = $_SESSION['complement_session'];
 
 }
-
 if(!isset($_SESSION['login_session']) and  !isset($_SESSION['pass_session'])){
     session_destroy();
     header("location: index.php?status=error_session#errorSessionModal");
 }
 
+//Variáveis de construção HTML
 $readonly = 'readonly';
 $btnUpdate = '';
 $resultMoveis = '';
 $sorry = '';
 
+//Confere se o usuário deseja editar os dados do perfil
 if(isset($_GET['update'])){
     switch ($_GET['update']) {
         case 'true':
@@ -41,9 +43,10 @@ if(isset($_GET['update'])){
             break;
     }
 }
-
+//Consulta dos móveis curtidos pelo ID do usuário
 $furnitures = Curtido::getCurtidos($id);
 
+//Amostragem dos móveis curtidos pelo usuário
 foreach ($furnitures as $furniture){
     $resultMoveis .= '
         <fieldset>
@@ -58,7 +61,7 @@ foreach ($furnitures as $furniture){
         ';
 }
 
-
+//Mesagem caso não haja móveis curtidos
 if (strlen($resultMoveis) == 0){
     $sorry = '            
     <p class="sorry">
