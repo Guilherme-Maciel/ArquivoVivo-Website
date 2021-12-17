@@ -247,11 +247,11 @@ CREATE TABLE IF NOT EXISTS `pedidos` (
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 
 ```
-- O Usuário, senha e servidor são, respectivamente, 'root', '' e 'localhost'; Faça as alterações necessárias no arquivo 'app/lib/db/Database.php' se precisar.
+- O Usuário, senha e servidor são, respectivamente, 'root', '' e 'localhost'; Faça as alterações necessárias no arquivo `app/lib/db/Database.php` se precisar.
 
 ## Compilação
 
 - Inicie seu servidor local
-- Em seu navegador, digite 'http://localhost'
-- Abra a pasta do projeto 'ArquivoVivo-Website' e você será redirecionado para a página 'index.php'<br><br>
+- Em seu navegador, digite http://localhost
+- Abra a pasta do projeto `ArquivoVivo-Website` e você será redirecionado para a página `index.php`<br><br>
 :warning: ***Lembrando que para realizar o upload de novos dados dinamicamente no banco, você deve utilizar o projeto desktop:*** <a href="https://github.com/Guilherme-Maciel/ArquivoVivo-Desktop">ARQUIVO VIVO ONLINE - DESKTOP</a>
