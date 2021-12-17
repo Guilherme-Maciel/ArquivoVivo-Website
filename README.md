@@ -164,6 +164,23 @@ CREATE TABLE IF NOT EXISTS `categoria` (
   PRIMARY KEY (`ct_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- Copiando dados para a tabela arquivovivomv.categoria: ~12 rows (aproximadamente)
+/*!40000 ALTER TABLE `categoria` DISABLE KEYS */;
+INSERT INTO `categoria` (`ct_id`, `ct_nome`) VALUES
+	(2, 'AMBIENTES'),
+	(3, 'APARADOR'),
+	(4, 'CADEIRAS'),
+	(5, 'CREDENZA'),
+	(6, 'ESCRIVANINHA'),
+	(7, 'ESTANTE'),
+	(8, 'MESA LATERAL'),
+	(9, 'MESA ALTA'),
+	(10, 'MESA DE CENTRO'),
+	(11, 'OBJETOS'),
+	(12, 'POLTRONAS'),
+	(13, 'SOFÁS');
+/*!40000 ALTER TABLE `categoria` ENABLE KEYS */;
+
 -- Copiando estrutura para tabela arquivovivomv.moveis
 CREATE TABLE IF NOT EXISTS `moveis` (
   `m_id` int(11) NOT NULL AUTO_INCREMENT,
