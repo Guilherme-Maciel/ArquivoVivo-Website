@@ -90,6 +90,13 @@ de agilizar os processos da empresa Arquivo Vivo Móveis por meio de sistemas in
 ```
 git clone https://github.com/Guilherme-Maciel/ArquivoVivo-Website.git
 ```
+- O programa utiliza o Composer para montagem do autoload, portanto, você deve possuí-lo instalado em sua máquina; caso não tenha, acesse: [COMPOSER](https://getcomposer.org/download/)
+- Confirme a instalação digitando em seu console `composer`; deverá aparecer algumas informações.
+- Após instalação, entre com o console na pasta do projeto `ArquivoVivo-WebSite` e digite:
+```
+composer install
+```
+- Será acrescentado a pasta `vendor` e o arquivo `composer.lock` na raiz do projeto.
 - No banco de dados de seu servidor, copie a seguinte estrutura:
 ```sql
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
