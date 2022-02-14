@@ -18,9 +18,9 @@ de agilizar os processos da empresa Arquivo Vivo Móveis por meio de sistemas in
   <img src="https://docs.google.com/uc?id=1Gqcfq_vQOWOGJfrDzVZUfSYCZPehdair" alt="etec" height="100" align="center">
 </div>
 
-- Documentação do projeto: <a href="">click here</a>
+- Documentação do projeto: <a href="https://drive.google.com/file/d/1yLs8cdsovD4qHrLlWvDC_UPSlA8CMCsL/view?usp=sharing">click here</a>
 - Site da instituição: <a href="https://etecjardimangela.com.br/">click here</a>
-- Site da empresa Arquivo Vivo: ...
+- Site da empresa Arquivo Vivo: <a href="https://arquivovivomoveis.com.br/">click here</a>
 
 ## Desenvolvedores
 <a href="https://github.com/Guilherme-Maciel">
